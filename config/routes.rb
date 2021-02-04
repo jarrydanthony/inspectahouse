@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
   resources :inspections do
-    resources :bookings, only: [:new, :index, :create]
+    resources :bookings, only: [:index, :create]
   end
 
 
