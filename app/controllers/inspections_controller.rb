@@ -6,7 +6,10 @@ class InspectionsController < ApplicationController
   end
 
   def create
-    @inspection = Inspection.create(inspection_params)
+    @inspection = Inspection.new(inspection_params)
+    @inspection.user = current_user
+    @inspection.save
+    redirect_to inspection_path(@inspection)
   end
 
   def edit
