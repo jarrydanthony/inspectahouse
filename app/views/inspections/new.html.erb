@@ -3,8 +3,10 @@
 
 <%= simple_form_for(@inspection) do |f| %>
   <%= f.input :location %>
-  <%= f.input :description %>
-  <%= f.input :datetime%>
+  <%= f.input :date%>
+  <%= f.input :time%>
+  <%= f.input :finish_time%>
   <%= f.input :payment_amount%>
+  <%= f.input :description %>
   <%= f.submit %>
 <% end %>
