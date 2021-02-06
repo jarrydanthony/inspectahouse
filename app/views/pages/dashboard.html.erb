@@ -13,7 +13,7 @@
 <h3> Other Bookings </h3>
 <% @my_inspections.each do |inspection| %>
     <% inspection.bookings.each do |booking| %>
-
+        
         <h5> <%= booking.user.email %> </h5>
 
         <h5> <%= booking.note %> </h5>

@@ -1,5 +1,4 @@
-<h1>Inspections#show</h1>
-<p>Find me in app/views/inspections/show.html.erb</p>
+<h1>Inspections</h1>
 
 <ul>
     <li>Location: <%= @inspection.location %></li>
@@ -8,4 +7,24 @@
     <li>Payment: <%= @inspection.payment_amount %></li>
     <li>Job Description: <%= @inspection.description %></li>
 </ul>>
-<%= link_to "Show all inspections", inspections_path %>
+
+<h3> Bookings: </h3>
+<% @bookings.each do |booking| %>
+
+    <h5> username: <%= booking.user.email %> </h5>
+
+    <h5> note: <%= booking.note %> </h5>
+
+    <h5> status: <%= booking.status %> </h5>
+    <br/>
+    <%= link_to "Accept", inspections_path %>
+    <%= link_to "Reject", inspections_path %>
+
+<% end %>
+<br/>
+<div> <%= link_to "Show all inspections", inspections_path %> </div>
+
+<%= simple_form_for [@inspection, @booking] do |f| %>
+  <%= f.input :note %>
+  <%= f.submit %>
+<% end %>
