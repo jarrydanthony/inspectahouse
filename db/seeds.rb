@@ -53,6 +53,7 @@ Inspection.all.each do |ins|
   if ins.user_id == user1.id
     2.times do ||
       Booking.create(
+      status: "Pending",
       inspection_id: ins.id,
       user_id: user2.id,
       note: Faker::Movie.quote
@@ -61,6 +62,7 @@ Inspection.all.each do |ins|
   else
     2.times do ||
       Booking.create(
+      status: "Pending",
       inspection_id: ins.id,
       user_id: user1.id,
       note: Faker::Movie.quote
