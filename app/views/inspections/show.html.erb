@@ -2,9 +2,10 @@
 <p>Find me in app/views/inspections/show.html.erb</p>
 
 <ul>
-    <li><%= @inspection.location %></li>
-    <li><%= @inspection.description %></li>
-    <li><%= @inspection.datetime %></li>
-    <li><%= @inspection.payment_amount %></li>
+    <li>Location: <%= @inspection.location %></li>
+    <li>Date: <%= @inspection.date %></li>
+    <li>Start time: <%= @inspection.time %>Finish time: <%= @inspection.finish_time %></li> 
+    <li>Payment: <%= @inspection.payment_amount %></li>
+    <li>Job Description: <%= @inspection.description %></li>
 </ul>>
 <%= link_to "Show all inspections", inspections_path %>
