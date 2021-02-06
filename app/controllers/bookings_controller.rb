@@ -1,7 +1,11 @@
 class BookingsController < ApplicationController
   before_action :find_booking, only: [:show]
   def create
-    @booking = Booking.create!(booking_params)
+    @booking = Booking.new(booking_params)
+    @booking.inspection_id = params[:inspection_id]
+    @booking.user = current_user
+    @booking.save
+    redirect_to inspection_path(@booking.inspection)
   end
 
   def show

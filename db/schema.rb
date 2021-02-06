@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_012102) do
+ActiveRecord::Schema.define(version: 2021_02_06_040557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_02_06_012102) do
     t.bigint "inspection_id", null: false
     t.bigint "user_id", null: false
     t.string "note"
+    t.string "status"
     t.index ["inspection_id"], name: "index_bookings_on_inspection_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
