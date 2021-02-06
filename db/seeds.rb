@@ -27,6 +27,11 @@ puts "done creating all users "
   Inspection.create(
     user_id: user1.id,
     location: Faker::Address.full_address,
+    payment_amount: Faker::Commerce.price(range: 0..10.0, as_string: true),
+    description: Faker::Music::Prince.lyric,
+    time: Faker::Time.backward(days: 14, period: :evening),
+    date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+    finish_time:Faker::Time.backward(days: 14, period: :evening)
     )
 end
 
@@ -34,6 +39,11 @@ end
   Inspection.create(
     user_id: user2.id,
     location: Faker::Address.full_address,
+    payment_amount: Faker::Commerce.price(range: 0..10.0, as_string: true),
+    description: Faker::Music::Prince.lyric,
+    time: Faker::Time.backward(days: 14, period: :evening),
+    date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+    finish_time:Faker::Time.backward(days: 14, period: :evening)
     )
 end
 
@@ -59,3 +69,4 @@ Inspection.all.each do |ins|
   end
 end
 puts "done creating all seeds "
+
