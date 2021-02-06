@@ -1,2 +1,12 @@
-<h1>Inspections#index</h1>
-<p>Find me in app/views/inspections/index.html.erb</p>
+<h1>Inspections</h1>
+
+<% @inspections.each do |inspection| %>
+<h2>Location: <%= link_to inspection.location, inspection_path(inspection)%> </h2>
+<ul>
+    <li>Date: <%= inspection.date %></li>
+    <li>Start time: <%= inspection.time %>Finish time: <%= inspection.finish_time %></li>
+    <li>Payment: <%= inspection.payment_amount %></li>
+    <li>Job Description: <%= inspection.description %></li>
+</ul>
+<br>
+<% end %>
