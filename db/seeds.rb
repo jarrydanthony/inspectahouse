@@ -55,7 +55,8 @@ Inspection.all.each do |ins|
       Booking.create(
       inspection_id: ins.id,
       user_id: user2.id,
-      note: Faker::Movie.quote
+      note: Faker::Movie.quote,
+      status: "Pending"
       )
     end
   else
@@ -63,7 +64,8 @@ Inspection.all.each do |ins|
       Booking.create(
       inspection_id: ins.id,
       user_id: user1.id,
-      note: Faker::Movie.quote
+      note: Faker::Movie.quote,
+      status: "Pending"
       )
     end
   end
