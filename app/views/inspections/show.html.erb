@@ -21,8 +21,8 @@
     <%= link_to "Reject", inspections_path %>
 
 <% end %>
-
-<%= link_to "Show all inspections", inspections_path %>
+<br/>
+<div> <%= link_to "Show all inspections", inspections_path %> </div>
 
 <%= simple_form_for [@inspection, @booking] do |f| %>
   <%= f.input :note %>
