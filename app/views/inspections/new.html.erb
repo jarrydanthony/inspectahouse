@@ -3,8 +3,9 @@
 
 <%= simple_form_for(@inspection) do |f| %>
   <%= f.input :location %>
-  <%= f.input :date%>
-  <%= f.input :time%>
+  <%= f.input :date, :order => [:day, :month, :year]
+%>
+  <%= f.input :time, label: "Start Time"%>
   <%= f.input :finish_time%>
   <%= f.input :payment_amount%>
   <%= f.input :description %>
