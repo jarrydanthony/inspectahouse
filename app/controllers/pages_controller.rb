@@ -8,9 +8,11 @@ class PagesController < ApplicationController
     @my_inspection_bookings = []
     @my_inspections = current_user.inspections
 
-    @my_inspections.each do |inspection| 
-      @my_inspection_bookings << inspection.bookings
-    end
+
+    
+    # @my_inspections.each do |inspection| 
+    #   @my_inspection_bookings << inspection.bookings
+    # end
 
   end
 
