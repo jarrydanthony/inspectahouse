@@ -1,2 +1,10 @@
 <h1>Inspections#show</h1>
 <p>Find me in app/views/inspections/show.html.erb</p>
+
+<ul>
+    <li><%= @inspection.location %></li>
+    <li><%= @inspection.description %></li>
+    <li><%= @inspection.datetime %></li>
+    <li><%= @inspection.payment_amount %></li>
+</ul>>
+<%= link_to "Show all inspections", inspections_path %>

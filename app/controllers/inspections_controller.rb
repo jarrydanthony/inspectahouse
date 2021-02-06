@@ -20,6 +20,7 @@ class InspectionsController < ApplicationController
   end
 
   def show
+  
   end
 
   def destroy
