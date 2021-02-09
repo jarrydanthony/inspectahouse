@@ -3,7 +3,7 @@
 <ul>
     <li>Location: <%= @inspection.location %></li>
     <li>Date: <%= @inspection.date %></li>
-    <li>Start time: <%= @inspection.time %>Finish time: <%= @inspection.finish_time %></li> 
+    <li>Start time: <%= @inspection.time %>Finish time: <%= @inspection.finish_time %></li>
     <li>Payment: <%= @inspection.payment_amount %></li>
     <li>Job Description: <%= @inspection.description %></li>
 </ul>
@@ -17,8 +17,8 @@
 
     <h5> status: <%= booking.status %> </h5>
     <br/>
-    <%= link_to "Accept", inspections_path %>
-    <%= link_to "Reject", inspections_path %>
+    <%= link_to "Accept", accept_booking_path(booking), method: :patch %>
+    <%= link_to "Reject", reject_booking_path(booking), method: :patch %>
 
 <% end %>
 <br/>

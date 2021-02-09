@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     member do 
       patch :submit
       patch :complete
+      patch :accept
+      patch :reject
     end
   end
 
