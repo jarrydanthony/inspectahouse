@@ -32,7 +32,9 @@
 <br/>
 <div> <%= link_to "Show all inspections", inspections_path %> </div>
 
-<%= simple_form_for [@inspection, @booking] do |f| %>
-  <%= f.input :note %>
-  <%= f.submit %>
+<% if current_user %>
+  <%= simple_form_for [@inspection, @booking] do |f| %>
+    <%= f.input :note %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
