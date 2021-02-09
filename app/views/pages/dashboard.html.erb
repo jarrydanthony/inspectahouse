@@ -3,9 +3,9 @@
 <h3> My Bookings </h3>
 <% @my_bookings.each do |booking| %>
 
-    <h5> <%= booking.user.email %> </h5>
-
-    <h5> <%= booking.note %> </h5>
+    <h5> <%= link_to booking.user.email, booking_path(booking)%> </h5>
+    <h5> Note: <%= booking.note %> </h5>
+    <h5> Status: <%= booking.status %> </h5>
 
 <% end %>
 
@@ -14,9 +14,9 @@
 <% @my_inspections.each do |inspection| %>
     <% inspection.bookings.each do |booking| %>
         
-        <h5> <%= booking.user.email %> </h5>
-
-        <h5> <%= booking.note %> </h5>
+    <h5> Email: <%= booking.user.email %> </h5>
+    <h5> Note: <%= booking.note %> </h5>
+    <h5> Status: <%= booking.status %> </h5>
 
     <% end %>
 <% end %>

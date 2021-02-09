@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
 
   resources :bookings, only: [:show, :edit, :destroy, :update] do
-    member do
+    member do 
+      patch :submit
+      patch :complete
       patch :accept
       patch :reject
     end
