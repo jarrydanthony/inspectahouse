@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:show]
+  before_action :find_booking, only: [:show, :submit, :complete]
   def create
     @booking = Booking.new(booking_params)
     @booking.inspection_id = params[:inspection_id]
@@ -9,6 +9,18 @@ class BookingsController < ApplicationController
   end
 
   def show
+  end
+
+  def submit
+    @booking.status = "Submitted"
+    @booking.save
+    redirect_to booking_path(@booking)
+  end
+
+  def complete
+    @booking.status = "Completed"
+    @booking.save
+    redirect_to booking_path(@booking)
   end
 
   private

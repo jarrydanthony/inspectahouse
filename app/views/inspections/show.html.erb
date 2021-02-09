@@ -11,7 +11,7 @@
 <h3> Bookings: </h3>
 <% @bookings.each do |booking| %>
 
-    <h5> username: <%= booking.user.email %> </h5>
+    <h5> username: <%= link_to booking.user.email, booking_path(booking) %> </h5>
 
     <h5> note: <%= booking.note %> </h5>
 

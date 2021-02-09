@@ -1,9 +1,18 @@
-<h1>Show booking <%= @booking.id %> </h1>
+<div class="container">
+    <h1><%= @booking.inspection.location %> </h1>
 
-<h3>
-<%= @booking.user.email %>
-</h3>
+    <h5>
+        Email: <%= @booking.user.email %>
+    </h5>
 
-<h5>
-<%= @booking.note %>
-</h5>
+    <h5>
+        Note: <%= @booking.note %>
+    </h5>
+    <h5>
+        Status: <%= @booking.status %>
+    </h5>
+
+    <%= link_to "Submit", submit_booking_path(@booking), method: :patch %>
+    <%= link_to "Complete", complete_booking_path(@booking), method: :patch %>
+
+</div>
