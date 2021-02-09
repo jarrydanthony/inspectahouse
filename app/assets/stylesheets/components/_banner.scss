@@ -1,0 +1,39 @@
+.banner{
+    padding: 50px;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+
+}
+
+.banner_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: middle;
+    margin: 50px;
+    padding: 25px;
+    width: 33%;
+    
+}
+
+.banner_text h1{
+    color: white;
+    line-height: 50px;
+    text-align: right;
+}
+
+.btn{
+    border-radius: 2px;
+    box-shadow: 1px 0px 2px lightgray;
+}
+
+.button_request{
+    background: white;
+    border-color: grey;
+    padding: 10px 20px;
+    border-radius: 2px;
+    box-shadow: 1px 0px 2px lightgray;
+    text-align: center;
+}

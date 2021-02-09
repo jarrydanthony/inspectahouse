@@ -6,18 +6,18 @@ User.destroy_all
 puts "done cleaning "
 
 user1 = User.create(
-  email: Faker::Internet.email,
+  email: user@user.com,
   password: 123456,
   name: Faker::Name.name,
-  description: Faker::Twitter.status,
+  description: Faker::Food.description,
   username: Faker::Superhero.prefix
 )
 
 user2 = User.create(
-  email: Faker::Internet.email,
+  email: user@user.com,
   password: 123456,
   name: Faker::Name.name,
-  description: Faker::Twitter.status,
+  description: Faker::Food.description,
   username: Faker::Superhero.prefix
 )
 
