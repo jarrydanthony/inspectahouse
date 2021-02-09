@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:show]
+  before_action :find_booking, only: [:show, :accept, :reject]
   def create
     @booking = Booking.new(booking_params)
     @booking.inspection_id = params[:inspection_id]
@@ -9,6 +9,18 @@ class BookingsController < ApplicationController
   end
 
   def show
+  end
+
+  def accept
+    @booking.status = "Accepted"
+    @booking.save
+    redirect_to inspection_path(@booking.inspection)
+  end
+
+  def reject
+    @booking.status = "Rejected"
+    @booking.save
+    redirect_to inspection_path(@booking.inspection)
   end
 
   private
