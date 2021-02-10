@@ -11,6 +11,7 @@
     <h5>
         Status: <%= @booking.status %>
     </h5>
+    <%= link_to "Edit", edit_booking_path(@booking) %>
 
     <%= link_to "Submit", submit_booking_path(@booking), method: :patch %>
     <%= link_to "Complete", complete_booking_path(@booking), method: :patch %>
