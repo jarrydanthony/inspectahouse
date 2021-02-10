@@ -38,3 +38,14 @@
     <%= f.submit %>
   <% end %>
 <% end %>
+
+<%= simple_form_for [@inspection, @comment] do |f| %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+
+Comments:
+<% @comments.each do |comment| %>
+  <h3> <%= comment.user.username %> </h3>
+  <h5> <%= comment.description %> </h5>
+<% end %> 

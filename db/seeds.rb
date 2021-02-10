@@ -10,16 +10,16 @@ user1 = User.create(
   password: 123456,
   name: Faker::Name.name,
   description: Faker::Twitter.status,
-  username: Faker::Superhero.prefix,
-  )
+  username: Faker::Superhero.prefix
+)
 
 user2 = User.create(
   email: Faker::Internet.email,
   password: 123456,
   name: Faker::Name.name,
   description: Faker::Twitter.status,
-  username: Faker::Superhero.prefix,
-  )
+  username: Faker::Superhero.prefix
+)
 
 puts "done creating all users "
 
