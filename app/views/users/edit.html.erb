@@ -1,0 +1,8 @@
+<h1>User#edit</h1>
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :username %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
