@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     @booking.save
     redirect_to booking_path(@booking)
   end
-  
+
   def accept
     @booking.status = "Accepted"
     @booking.save
@@ -52,7 +52,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:note)
+    params.require(:booking).permit(:note, photos: [])
   end
 
   def find_booking
