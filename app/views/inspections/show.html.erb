@@ -8,6 +8,10 @@
     <li>Job Description: <%= @inspection.description %></li>
 </ul>
 
+<div> <%= link_to "Edit inspection", edit_inspection_path(@inspection) %></div>
+
+<div> <%= link_to "Delete inspection", inspection_path(@inspection), method: :delete %></div>
+
 <h3> Bookings: </h3>
 <% @bookings.each do |booking| %>
 
@@ -19,6 +23,10 @@
     <br/>
     <%= link_to "Accept", accept_booking_path(booking), method: :patch %>
     <%= link_to "Reject", reject_booking_path(booking), method: :patch %>
+    <%= link_to "Remove",
+                  booking_path(booking),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
 
 <% end %>
 <br/>

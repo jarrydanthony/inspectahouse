@@ -28,11 +28,13 @@ class InspectionsController < ApplicationController
 
   def destroy
     @inspection.destroy
-    # redirect_to
+    redirect_to inspections_path
   end
 
   def update
-    @inspection.update(params[:inspection])
+    @inspection.update(inspection_params)
+    redirect_to inspection_path
+
   end
 
   private

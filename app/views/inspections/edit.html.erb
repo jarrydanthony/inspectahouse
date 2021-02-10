@@ -1,2 +1,12 @@
 <h1>Inspections#edit</h1>
-<p>Find me in app/views/inspections/edit.html.erb</p>
+
+<%= simple_form_for(@inspection) do |f| %>
+  <%= f.input :location %>
+  <%= f.input :date, :order => [:day, :month, :year]
+%>
+  <%= f.input :time, label: "Start Time"%>
+  <%= f.input :finish_time%>
+  <%= f.input :payment_amount%>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
