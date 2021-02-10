@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
 
-
-
   devise_for :users
   root to: 'pages#home'
 
-
   resources :inspections do
     resources :bookings, only: [:index, :create]
+    resources :comments, only: [:index, :create]
   end
 
-
   resources :bookings, only: [:show, :edit, :destroy, :update] do
-    member do 
+    member do
       patch :submit
       patch :complete
       patch :accept

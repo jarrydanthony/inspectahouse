@@ -24,6 +24,8 @@ class InspectionsController < ApplicationController
     @active_booking = @bookings.find_by(status: "Active")
     @pending_booking = @bookings.find_by(status: "Pending")
     @booking = Booking.new
+    @comments = @inspection.comments
+    @comment = Comment.new
   end
 
   def destroy
@@ -48,6 +50,5 @@ class InspectionsController < ApplicationController
   end
 
   def find_bookings
-    
   end
 end
