@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:show, :submit, :complete, :accept, :reject]
+  before_action :find_booking, only: [:show, :submit, :complete, :accept, :reject, :edit, :update]
 
   def create
     @booking = Booking.new(booking_params)
@@ -10,6 +10,14 @@ class BookingsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    @booking.update(booking_params)
+    redirect_to booking_path(@booking)
   end
 
   def submit
