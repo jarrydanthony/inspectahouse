@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_162017) do
+
+ActiveRecord::Schema.define(version: 2021_02_12_231655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -21,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_02_09_162017) do
     t.bigint "inspection_id", null: false
     t.bigint "user_id", null: false
     t.string "note"
-    t.string "status"
+    t.string "status", default: "Pending"
     t.index ["inspection_id"], name: "index_bookings_on_inspection_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -32,6 +54,8 @@ ActiveRecord::Schema.define(version: 2021_02_09_162017) do
     t.text "description"
     t.bigint "inspection_id", null: false
     t.bigint "user_id", null: false
+    t.boolean "private"
+    t.string "booking_id"
     t.index ["inspection_id"], name: "index_comments_on_inspection_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -46,6 +70,8 @@ ActiveRecord::Schema.define(version: 2021_02_09_162017) do
     t.time "time"
     t.date "date"
     t.time "finish_time"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_inspections_on_user_id"
   end
 
@@ -64,6 +90,7 @@ ActiveRecord::Schema.define(version: 2021_02_09_162017) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "inspections"
   add_foreign_key "bookings", "users"
   add_foreign_key "comments", "inspections"

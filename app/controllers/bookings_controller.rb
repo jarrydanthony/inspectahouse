@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :submit, :complete, :accept, :reject, :edit, :update, :destroy ]
+  before_action :find_comments, only: [:show ]
 
   def create
     @booking = Booking.new(booking_params)
@@ -10,6 +11,8 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @inspection = @booking.inspection
+    @comment = Comment.new
   end
 
   def edit
@@ -31,7 +34,7 @@ class BookingsController < ApplicationController
     @booking.save
     redirect_to booking_path(@booking)
   end
-  
+
   def accept
     @booking.status = "Accepted"
     @booking.save
@@ -52,10 +55,14 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:note)
+    params.require(:booking).permit(:note, photos: [])
   end
 
   def find_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def find_comments
+    @comments = @booking.inspection.comments.where(booking_id: @booking.id)
   end
 end

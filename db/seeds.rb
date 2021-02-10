@@ -31,7 +31,7 @@ puts "done creating all users "
     description: Faker::Music::Prince.lyric,
     time: Faker::Time.backward(days: 14, period: :evening),
     date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
-    finish_time:Faker::Time.backward(days: 14, period: :evening)
+    finish_time:Faker::Time.backward(days: 14, period: :evening),
     )
 end
 
@@ -43,7 +43,7 @@ end
     description: Faker::Music::Prince.lyric,
     time: Faker::Time.backward(days: 14, period: :evening),
     date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
-    finish_time:Faker::Time.backward(days: 14, period: :evening)
+    finish_time:Faker::Time.backward(days: 14, period: :evening),
     )
 end
 
@@ -51,25 +51,19 @@ puts "done creating all inspections "
 
 Inspection.all.each do |ins|
   if ins.user_id == user1.id
-    2.times do ||
-      Booking.create(
-      status: "Pending",
-      inspection_id: ins.id,
-      user_id: user2.id,
-      note: Faker::Movie.quote,
-      status: "Pending"
-      )
-    end
+    Booking.create(
+    status: "Pending",
+    inspection_id: ins.id,
+    user_id: user2.id,
+    note: Faker::Movie.quote,
+    )
   else
-    2.times do ||
-      Booking.create(
-      status: "Pending",
-      inspection_id: ins.id,
-      user_id: user1.id,
-      note: Faker::Movie.quote,
-      status: "Pending"
-      )
-    end
+    Booking.create(
+    status: "Pending",
+    inspection_id: ins.id,
+    user_id: user1.id,
+    note: Faker::Movie.quote,
+    )
   end
 end
 puts "done creating all seeds "
