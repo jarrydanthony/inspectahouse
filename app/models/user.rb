@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :inspections
   has_many :bookings
+
+  validates :username, uniqueness: true
 end
