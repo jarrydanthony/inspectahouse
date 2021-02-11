@@ -7,6 +7,7 @@
     <li>Start time: <%= inspection.time %>Finish time: <%= inspection.finish_time %></li>
     <li>Payment: <%= inspection.payment_amount %></li>
     <li>Job Description: <%= inspection.description %></li>
+    <li>View Profile: <%= link_to inspection.user.username, user_path(inspection.user_id)%></li>
 </ul>
 <br>
 <% end %>

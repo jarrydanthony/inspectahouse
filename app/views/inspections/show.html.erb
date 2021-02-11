@@ -6,9 +6,10 @@
     <li>Start time: <%= @inspection.time %>Finish time: <%= @inspection.finish_time %></li>
     <li>Payment: <%= @inspection.payment_amount %></li>
     <li>Job Description: <%= @inspection.description %></li>
+    <li>View Profile: <%= link_to @inspection.user.username, user_path(@inspection.user_id)%></li>
 </ul>
 
- 
+
 <div> <%= link_to "Edit inspection", edit_inspection_path(@inspection) %></div>
 <div> <%= link_to "Delete inspection", inspection_path(@inspection), method: :delete %></div>
 
@@ -48,4 +49,4 @@ Comments:
 <% @comments.each do |comment| %>
   <h3> <%= comment.user.username %> </h3>
   <h5> <%= comment.description %> </h5>
-<% end %> 
+<% end %>
