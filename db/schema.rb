@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_10_143357) do
+ActiveRecord::Schema.define(version: 2021_02_11_113152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2021_02_10_143357) do
     t.bigint "inspection_id", null: false
     t.bigint "user_id", null: false
     t.string "note"
-    t.string "status"
+    t.string "status", default: "Pending"
     t.index ["inspection_id"], name: "index_bookings_on_inspection_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_02_10_143357) do
     t.text "description"
     t.bigint "inspection_id", null: false
     t.bigint "user_id", null: false
+    t.boolean "private"
     t.index ["inspection_id"], name: "index_comments_on_inspection_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end

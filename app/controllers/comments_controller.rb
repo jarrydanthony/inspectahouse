@@ -9,7 +9,12 @@ class CommentsController < ApplicationController
     @comment.inspection_id = params[:inspection_id]
     @comment.user = current_user
     @comment.save
-    redirect_to inspection_path(@comment.inspection)
+    if @comment.private
+      @bookingarray = Booking.where("inspection_id = :inspection AND status != :rejected AND status != :pending", { inspection: @comment.inspection_id, rejected: "Rejected", pending: "Pending" } )
+      redirect_to booking_path(@bookingarray[0])
+    else
+      redirect_to inspection_path(@comment.inspection)
+    end
   end
 
   def index
@@ -32,7 +37,7 @@ class CommentsController < ApplicationController
   private 
 
   def comment_params
-    params.require(:comment).permit(:description)
+    params.require(:comment).permit(:description, :private)
   end
 
   def find_inspection
