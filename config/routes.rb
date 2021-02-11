@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :create]
   end
 
+  resources :comments, only: [:show, :edit,:update, :destroy]
+
   resources :bookings, only: [:show, :edit, :destroy, :update] do
     member do
       patch :submit
@@ -21,6 +23,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :users, only: [:index, :show, :edit, :update]
+
 end
-
-
