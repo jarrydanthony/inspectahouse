@@ -25,7 +25,7 @@ class InspectionsController < ApplicationController
     @active_bookings = @bookings.where("status != :rejected AND status != :pending", { rejected: "Rejected", pending: "Pending" })
     @pending_booking = @bookings.find_by(status: "Pending")
     @booking = Booking.new
-    @comments = @inspection.comments
+    @comments = @inspection.comments.where(private: false)
     @comment = Comment.new
   end
 

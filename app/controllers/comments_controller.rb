@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.save
     if @comment.private
-      @bookingarray = Booking.where("inspection_id = :inspection AND status != :rejected AND status != :pending", { inspection: @comment.inspection_id, rejected: "Rejected", pending: "Pending" } )
+      @bookingarray = Booking.where("inspection_id = :inspection AND status != :rejected", { inspection: @comment.inspection_id, rejected: "Rejected", pending: "Pending" } )
       redirect_to booking_path(@bookingarray[0])
     else
       redirect_to inspection_path(@comment.inspection)
