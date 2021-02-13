@@ -32,6 +32,8 @@ puts "done creating all users "
     time: Faker::Time.backward(days: 14, period: :evening),
     date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
     finish_time:Faker::Time.backward(days: 14, period: :evening),
+    longitude:Faker::Address.longitude,
+    latitude:Faker::Address.latitude
     )
 end
 
@@ -44,6 +46,8 @@ end
     time: Faker::Time.backward(days: 14, period: :evening),
     date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
     finish_time:Faker::Time.backward(days: 14, period: :evening),
+    longitude:Faker::Address.longitude,
+    latitude:Faker::Address.latitude
     )
 end
 
