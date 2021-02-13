@@ -12,25 +12,25 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "components/banner";
+
 
 h{
     background-color: blue;
     font-family: 'Montserrat', sans-serif;
 }
 h1{
-    font-size: 100px;
+    font-size: 42px;
     font-weight: bolder;
     text-shadow: 2px 2px black;
 
 }
 
 h2{
-    font-size: 42px;
+    font-size: 38px;
 }
 
 h3{
-    font-size: 36px;
+    font-size: 34px;
 }
 
 h4{
@@ -45,7 +45,12 @@ p{
     font-size: 18px;
 }
 
+
 #map {
   position: sticky;
   top: 56px;
+} 
+.a-primary{
+    text-decoration: none;
+    color: white;
 }
