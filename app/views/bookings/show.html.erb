@@ -4,14 +4,17 @@
 <h5> Note: <%= @booking.note %> </h5>
 <h5> Status: <%= @booking.status %> </h5>
 <br>
+<% if @booking.user == current_user %>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submitPhotosModal">
     Upload Photos
     </button>
     <button type="button" class="btn btn-primary"> <%= link_to "Submit", submit_booking_path(@booking), class: "a-primary", method: :patch %> </button>
+<% else %>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#viewPhotosModal">
     View Photos
     </button>
     <button type="button" class="btn btn-primary"> <%= link_to "Complete", complete_booking_path(@booking), class: "a-primary", method: :patch %> </button>
+<% end %>
 
 <div>Comments:</div>
 <% @comments.each do |comment| %>
