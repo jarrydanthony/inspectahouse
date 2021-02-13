@@ -22,7 +22,7 @@ h1{
     font-size: 100px;
     font-weight: bolder;
     text-shadow: 2px 2px black;
-    
+
 }
 
 h2{
@@ -43,4 +43,9 @@ h5{
 p{
     font-family: 'Alegreya', serif;
     font-size: 18px;
+}
+
+#map {
+  position: sticky;
+  top: 56px;
 }
