@@ -1,13 +1,15 @@
-<h1>Inspections</h1>
+<h1 style="text-align:center">Inspections</h1>
 
 <% @inspections.each do |inspection| %>
-<h2>Location: <%= link_to inspection.location, inspection_path(inspection)%> </h2>
-<ul>
-    <li>Date: <%= inspection.date %></li>
-    <li>Start time: <%= inspection.time %>Finish time: <%= inspection.finish_time %></li>
-    <li>Payment: <%= inspection.payment_amount %></li>
-    <li>Job Description: <%= inspection.description %></li>
-    <li>View Profile: <%= link_to inspection.user.username, user_path(inspection.user_id)%></li>
+<div class="card">
+    <h5><strong>Location:</strong> <%= link_to inspection.location, inspection_path(inspection)%> </h5>
+        <ul>
+            <li><strong>Date: </strong> <%= inspection.date %></li>
+            <li><strong>Start time: </strong> <%= inspection.time %><strong></li>
+            <li>Finish time:</strong> <%= inspection.finish_time %></li>
+            <li><strong>Payment:</strong> <%= inspection.payment_amount %></li>
+            <li><strong>Job Description: </strong> <%= inspection.description %></li>
+            <li><strong>View Profile:</strong> <%= link_to inspection.user.username, user_path(inspection.user_id)%></li>
 </ul>
-<br>
+</div>
 <% end %>
