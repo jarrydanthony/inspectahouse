@@ -1,38 +1,39 @@
-<div class="container">
-    <h1><%= link_to @booking.inspection.location, inspection_path(@booking.inspection) %> </h1>
+<div class="container-fluid">
+    <div class="row"> 
+        <div class="col-4">
+            <h1><%= link_to @booking.inspection.location, inspection_path(@booking.inspection) %> </h1>
 
-    <h5>
-        Email: <%= @booking.user.email %>
-    </h5>
+            <h5> Email: <%= @booking.user.email %> </h5>
 
-    <h5>
-        Note: <%= @booking.note %>
-    </h5>
-    <h5>
-        Status: <%= @booking.status %>
-    </h5>
-    <%= link_to "Edit", edit_booking_path(@booking) %>
+            <h5> Note: <%= @booking.note %> </h5>
+            <h5> Status: <%= @booking.status %> </h5>
+            <%= link_to "Edit", edit_booking_path(@booking) %>
 
-    <%= simple_form_for(@booking) do |f| %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit %>
-    <% end %>
+            <%= simple_form_for(@booking) do |f| %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+            <%= f.submit %>
+            <% end %>
 
-    <%= link_to "Submit", submit_booking_path(@booking), method: :patch %>
-    <%= link_to "Complete", complete_booking_path(@booking), method: :patch %>
-    <div>Comments:</div>
-    <% @comments.each do |comment| %>
-    <h3> <%= comment.user.username %> </h3>
-    <h5> <%= comment.description %> </h5>
+            <%= link_to "Submit", submit_booking_path(@booking), method: :patch %>
+            <%= link_to "Complete", complete_booking_path(@booking), method: :patch %>
+            <div>Comments:</div>
+            <% @comments.each do |comment| %>
+            <h3> <%= comment.user.username %> </h3>
+            <h5> <%= comment.description %> </h5>
 
-    <% if comment.user == current_user %>
-        <div> <%= link_to "Edit", edit_comment_path(comment)%> </div>
-        <div> <%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "Are you sure?" }%> </div>
-    <% end %>
-    <% end %>
-    <%= simple_form_for [@inspection, @comment] do |f| %>
-        <%= f.input :private, :as => :hidden, :input_html => { :value => true } %>
-        <%= f.input :description %>
-        <%= f.submit %>
-    <% end %>
+            <% if comment.user == current_user %>
+                <div> <%= link_to "Edit", edit_comment_path(comment)%> </div>
+                <div> <%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "Are you sure?" }%> </div>
+            <% end %>
+            <% end %>
+            <%= simple_form_for [@inspection, @comment] do |f| %>
+                <%= f.input :private, :as => :hidden, :input_html => { :value => true } %>
+                <%= f.input :description %>
+                <%= f.submit %>
+            <% end %>
+        </div>
+        <div class="col-8">
+        </div>
+    </div>
+    
 </div>
