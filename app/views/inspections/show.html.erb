@@ -33,7 +33,7 @@
 <br/>
 <div> <%= link_to "Show all inspections", inspections_path %> </div>
 
-<% if current_user %>
+<% if current_user and !@pending_booking and !@active_bookings[0]%>
   <%= simple_form_for [@inspection, @booking] do |f| %>
     <%= f.input :note %>
     <%= f.submit %>
@@ -41,6 +41,7 @@
 <% end %>
 
 <%= simple_form_for [@inspection, @comment] do |f| %>
+  <%= f.input :private, :as => :hidden, :input_html => { :value => false } %>
   <%= f.input :description %>
   <%= f.submit %>
 <% end %>
