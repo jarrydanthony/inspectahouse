@@ -1,7 +1,12 @@
 <h1>inspectAhouse</h1>
-<p>You can't be in two places at once, find an inspectA! </p>
+<p>You can't be in <%= @inspections.count %> places at once, find an inspecta! </p>
 
 <a href="/inspections/new" class="btn btn-primary">Request an inspection</a>
 <a href="/inspections" class="btn btn-danger">Get paid</a>
 
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 

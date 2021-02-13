@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_02_12_231655) do
 
   # These are extensions that must be enabled in order to support this database
@@ -69,6 +70,8 @@ ActiveRecord::Schema.define(version: 2021_02_12_231655) do
     t.time "time"
     t.date "date"
     t.time "finish_time"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_inspections_on_user_id"
   end
 
