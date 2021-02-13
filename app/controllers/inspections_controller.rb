@@ -4,6 +4,7 @@ class InspectionsController < ApplicationController
 
   def new
     @inspection = Inspection.new
+
   end
 
   def create
@@ -34,6 +35,12 @@ class InspectionsController < ApplicationController
     @booking = Booking.new
     @comments = @inspection.comments.where(private: false)
     @comment = Comment.new
+
+    @markers = [
+      {
+        lat: @inspection.latitude,
+        lng: @inspection.longitude
+      }]
   end
 
   def destroy
