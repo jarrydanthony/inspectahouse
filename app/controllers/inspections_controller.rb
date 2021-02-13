@@ -3,6 +3,7 @@ class InspectionsController < ApplicationController
   before_action :find_inspection, only: [:edit, :show, :update, :destroy]
 
   def new
+    index
     @inspection = Inspection.new
 
   end

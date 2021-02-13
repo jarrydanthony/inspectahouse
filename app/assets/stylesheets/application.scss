@@ -22,7 +22,7 @@ h1{
     font-size: 42px;
     font-weight: bolder;
     text-shadow: 2px 2px black;
-    
+
 }
 
 h2{
@@ -45,6 +45,11 @@ p{
     font-size: 18px;
 }
 
+
+#map {
+  position: sticky;
+  top: 56px;
+} 
 .a-primary{
     text-decoration: none;
     color: white;
