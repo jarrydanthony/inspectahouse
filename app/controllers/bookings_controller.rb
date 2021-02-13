@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :submit, :complete, :accept, :reject, :edit, :update, :destroy ]
+  before_action :find_comments, only: [:show ]
 
   def create
     @booking = Booking.new(booking_params)
@@ -10,6 +11,8 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @inspection = @booking.inspection
+    @comment = Comment.new
   end
 
   def edit
@@ -57,5 +60,9 @@ class BookingsController < ApplicationController
 
   def find_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def find_comments
+    @comments = @booking.inspection.comments.where(booking_id: @booking.id)
   end
 end

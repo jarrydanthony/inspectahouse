@@ -22,10 +22,10 @@ class InspectionsController < ApplicationController
 
   def show
     @bookings = @inspection.bookings
-    @active_booking = @bookings.find_by(status: "Active")
+    @active_bookings = @bookings.where("status != :rejected AND status != :pending", { rejected: "Rejected", pending: "Pending" })
     @pending_booking = @bookings.find_by(status: "Pending")
     @booking = Booking.new
-    @comments = @inspection.comments
+    @comments = @inspection.comments.where(private: false)
     @comment = Comment.new
   end
 
@@ -37,7 +37,6 @@ class InspectionsController < ApplicationController
   def update
     @inspection.update(inspection_params)
     redirect_to inspection_path
-
   end
 
   private
@@ -51,5 +50,6 @@ class InspectionsController < ApplicationController
   end
 
   def find_bookings
+    @bookings = Booking.all.where.not(status: "Rejected")
   end
 end
