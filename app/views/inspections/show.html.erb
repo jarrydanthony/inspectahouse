@@ -10,8 +10,8 @@
 </ul>
 
 
-<div> <%= link_to "Edit inspection", edit_inspection_path(@inspection) %></div>
-<div> <%= link_to "Delete inspection", inspection_path(@inspection), method: :delete %></div>
+<%= link_to "Edit inspection", edit_inspection_path(@inspection) %>
+<%= link_to "Delete inspection", inspection_path(@inspection), method: :delete %>
 
 <h3> Bookings: </h3>
 <% @bookings.each do |booking| %>
@@ -31,7 +31,7 @@
 
 <% end %>
 <br/>
-<div> <%= link_to "Show all inspections", inspections_path %> </div>
+<%= link_to "Show all inspections", inspections_path %> 
 
 <% if current_user and !@pending_booking and !@active_bookings[0]%>
   <%= simple_form_for [@inspection, @booking] do |f| %>
@@ -57,8 +57,3 @@ Comments:
   <% end %>
 <% end %>
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>

@@ -34,5 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   initAutocomplete();
-
+  console.log('turbolinks load')
 });
