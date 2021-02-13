@@ -63,6 +63,6 @@ class BookingsController < ApplicationController
   end
 
   def find_comments
-    @comments = @booking.inspection.comments
+    @comments = @booking.inspection.comments.where(booking_id: @booking.id)
   end
 end

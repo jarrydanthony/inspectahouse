@@ -37,7 +37,6 @@ class InspectionsController < ApplicationController
   def update
     @inspection.update(inspection_params)
     redirect_to inspection_path
-
   end
 
   private
@@ -51,5 +50,6 @@ class InspectionsController < ApplicationController
   end
 
   def find_bookings
+    @bookings = Booking.all.where.not(status: "Rejected")
   end
 end

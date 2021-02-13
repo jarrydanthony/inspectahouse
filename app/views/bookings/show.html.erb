@@ -1,5 +1,5 @@
 <div class="container">
-    <h1><%= @booking.inspection.location %> </h1>
+    <h1><%= link_to @booking.inspection.location, inspection_path(@booking.inspection) %> </h1>
 
     <h5>
         Email: <%= @booking.user.email %>
