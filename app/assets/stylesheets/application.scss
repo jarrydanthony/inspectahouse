@@ -14,25 +14,20 @@
 @import "components/index";
 @import "pages/index";
 
-
-h{
-    background-color: blue;
-    font-family: 'Montserrat', sans-serif;
-}
 h1{
     font-size: 48px;
     font-weight: bolder;
     text-shadow: 2px 2px black;
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h2{
     font-size: 38px;
+    font-weight: bolder;
+    text-shadow: 2px 2px black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-h3{
-    font-size: 34px;
-}
 
 h4{
     font-size: 30px;
