@@ -7,7 +7,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import 'mapbox-gl/dist/mapbox-gl';
+// @import 'mapbox-gl/dist/mapbox-gl';
 @import "bootstrap";
 
 // Your CSS partials
@@ -27,10 +27,10 @@ h2{
 }
 
 
-#map {
-  position: sticky;
-  top: 56px;
-} 
+// #map {
+//   position: sticky;
+//   top: 56px;
+// } 
 .a-primary{
     text-decoration: none;
     color: white;

@@ -4,12 +4,12 @@ class PagesController < ApplicationController
   def home
     @inspections = Inspection.all
 
-    @markers = @inspections.geocoded.map do |ins|
-      {
-        lat: ins.latitude,
-        lng: ins.longitude
-      }
-    end
+    # @markers = @inspections.geocoded.map do |ins|
+    #   {
+    #     lat: ins.latitude,
+    #     lng: ins.longitude
+    #   }
+    # end
   end
 
   def dashboard

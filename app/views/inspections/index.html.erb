@@ -1,15 +1,22 @@
 <h1 style="text-align:center">Inspections</h1>
 
-<% @inspections.each do |inspection| %>
-<div class="card">
-    <h5><strong>Location:</strong> <%= link_to inspection.location, inspection_path(inspection)%> </h5>
-        <ul>
-            <li><strong>Date: </strong> <%= inspection.date %></li>
-            <li><strong>Start time: </strong> <%= inspection.time %><strong></li>
-            <li>Finish time:</strong> <%= inspection.finish_time %></li>
-            <li><strong>Payment:</strong> <%= inspection.payment_amount %></li>
-            <li><strong>Job Description: </strong> <%= inspection.description %></li>
-            <li><strong>View Profile:</strong> <%= link_to inspection.user.username, user_path(inspection.user_id)%></li>
-</ul>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <% @inspections.each do |inspection| %>
+            <div class="card" style="width: 20rem">
+                <img class="card-img-top" src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1143&q=80" alt="Card image top">
+                <div class="card-body">
+                    <h5><strong><%= link_to inspection.location, inspection_path(inspection), :class => "text-dark" %></strong> </h5>
+                        <p><ul>
+                            <li><strong>Date:</strong> <%= inspection.date %></li>
+                            <li>Start time: </strong> <%= inspection.time %></li>
+                            <li><strong>Payment:</strong> <%= inspection.payment_amount %></li>
+                            <%# <li><strong>Job Description: </strong> <%= inspection.description</li> %>
+                            <%= link_to inspection.user.username, user_path(inspection.user_id), :class => "view-profile" %></li>
+                        </ul></p>
+                </div>
+            </div>
+        <% end %>
+    </div>
 </div>
-<% end %>
