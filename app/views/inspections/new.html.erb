@@ -1,15 +1,13 @@
 
-<h5>New Inspection</h5>
-
-
-<%= simple_form_for(@inspection) do |f| %>
-  <%= f.input :location %>
-  <%= f.input :date, :order => [:day, :month, :year]
-%>
-  <%= f.input :time, label: "Start Time"%>
-  <%= f.input :finish_time%>
-  <%= f.input :payment_amount%>
-  <%= f.input :description %>
-  <%= f.submit %>
-
-<% end %>
+<div class="container my-5">
+  <%= simple_form_for(@inspection) do |f| %>
+    <%= f.input :location %>
+    <%= f.input :date, :order => [:day, :month] %>
+    <%= f.input :time, label: "Start Time"%>
+    <%= f.input :payment_amount, label: "Budget" %>
+    <%= f.input :description, :as => :text %>
+    <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+    <i class="icon-ok icon-white"></i> Create
+  <% end %>
+  <% end %>
+</div>

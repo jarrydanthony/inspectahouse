@@ -1,31 +1,31 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-icon" do %>
-    <li class="fas fa-house-user"></li>
-      <% end %>
-    <li class="nav-item active">
-     <%= link_to 'Hire an inspectA', new_inspection_path, class: "navbar-brand"%>
-     </li>
-      <li class="nav-item active">
-      <%= link_to 'Become an inspectA', inspections_path, class: "navbar-brand"%>
+<div class="navbar navbar-expand-sm navbar-lewagon">
+    <%= image_tag("logo.png", alt: 'Logo', width:132.17, height:40)%>
+    <!-- <li class="fas fa-house-user"></li> -->
+    <h3 class="pro">| Pro</h3>
 
-      </li>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <div>
-      </div>
+      <li class="nav-item active">
+        <%= link_to 'Hire inspecta', "/inspections/new", class: "nav-link"%>
+      </li>
+      <li class="nav-item active">
+      <%= link_to 'Become inspecta', "/inspections", class: "nav-link"%>
+      </li>
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <img class=" dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Inspections", "/inspections", class: "dropdown-item" %>
-            <%= link_to "Dashboard", "/dashboard", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to 'Hire inspecta', "/inspections/new", class: "nav-link"%>
+            <%= link_to 'Become inspecta', "/inspections", class: "nav-link"%>
+            <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
           </div>
         </li>
-      <% else %>
+        <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
@@ -33,3 +33,39 @@
     </ul>
   </div>
 </div>
+
+
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      </% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          </%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            </%= link_to "Inspections", "/inspections", class: "nav-link" %>
+            </%= link_to "Dashboard", "/dashboard", class: "nav-link" %>
+            </%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </div>
+        </li>
+      </% else %>
+        <li class="nav-item">
+          </%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      </% end %>
+    </ul>
+
+  </div>
+</div> -->
+
+<!-- <<<<<<< HEAD -->
+      <!-- </li>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <div> -->
+<!-- ======= -->
+
+
+      <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> %>

@@ -1,7 +1,40 @@
 // Specific CSS for your home-page
-.jumbotron {
-  background-image: url(/assets/house-c00df0ef47134e2e231089565ab082eefdfa6fedd3f0903c387607f25137d9f5.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+
+html, body {
+  overflow:hidden;
 }
+
+.jumbotron {
+  background-image: url(/assets/house_new-ffefdffcbce8aba8352679ab22476d70b16d24703cb697cad6aed3ae9d307560.jpg);
+  background-size: cover;
+  position: absolute;
+  background-position: right;
+  height: 100vh;
+  width: 100vw;
+  top:0px;
+}
+
+.call-to-action {
+  height:180px;
+  width: 400px;
+  margin:auto;
+  // background-color: lightgrey;
+
+}
+
+.action{
+  margin-top: 0px;
+}
+
+.btn-lg {
+  border-radius: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  color: white;
+  background-color: #019013;
+}
+
+.display-4 {
+  color: white;
+}
+
