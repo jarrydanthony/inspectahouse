@@ -8,7 +8,7 @@
       <title>Inspectahouse</title>
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
-      
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -16,18 +16,20 @@
       <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-      
+
     </head>
 
     <body>
       <%= render 'shared/navbar' %>
       <%= yield %>
 
+      <!-- implement mapbox only on index, show, dashboard -->
+
 
       <%# <div class="container-fluid pr-0">
         <div class="row">
           <% if action_name != 'home' %>
-          <%# <div class="col-<%= devise_controller? ? '12' : '4' %> 
+          <%# <div class="col-<%= devise_controller? ? '12' : '4' %>
             <%# <%= yield %>
           <%# </div>
           <% end %>
@@ -39,7 +41,7 @@
               <%# data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>
             <%# </div> %>
           <%# </div> %>
-          <%# <% end %> 
+          <%# <% end %>
         <%# </div> %>
       <%# </div> %>
 
