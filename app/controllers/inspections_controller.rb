@@ -21,12 +21,12 @@ class InspectionsController < ApplicationController
   def index
     @inspections = Inspection.all
 
-    # @markers = @inspections.geocoded.map do |ins|
-    #   {
-    #     lat: ins.latitude,
-    #     lng: ins.longitude
-    #   }
-    # end
+    @markers = @inspections.geocoded.map do |ins|
+      {
+        lat: ins.latitude,
+        lng: ins.longitude
+      }
+    end
   end
 
   def show

@@ -1,19 +1,20 @@
 <div class="container">
   <img class="card-img-top" src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1143&q=80" alt="Card image top">
   <div class="row">
-  <h4 class="show-content"><ul class="ul">
+  <h4 class="show-content">
+    <ul class="ul">
       <li>Location: <%= @inspection.location %></li>
       <li>Date: <%= @inspection.date %></li>
       <li>Start time: <%= @inspection.time %>Finish time: <%= @inspection.finish_time %></li>
       <li>Payment: <%= @inspection.payment_amount %></li>
       <li>Job Description: <%= @inspection.description %></li>
       <li>View Profile: <%= link_to @inspection.user.username, user_path(@inspection.user_id)%></li>
-  </ul></h4>
-</div>
+    </ul></h4>
+  </div>
 
 
-<%= link_to "Edit inspection", edit_inspection_path(@inspection), :class => "btn btn-success" %>
-<%= link_to "Delete inspection", inspection_path(@inspection), method: :delete, :class => "btn btn-danger" %>
+  <%= link_to "Edit inspection", edit_inspection_path(@inspection), :class => "btn btn-success" %>
+  <%= link_to "Delete inspection", inspection_path(@inspection), method: :delete, :class => "btn btn-danger" %>
 
 <h3> Bookings: </h3>
 <% @bookings.each do |booking| %>
@@ -33,7 +34,7 @@
 
 <% end %>
 <br/>
-<%= link_to "Show all inspections", inspections_path %> 
+<%= link_to "Show all inspections", inspections_path %>
 
 <% if current_user and !@pending_booking and !@active_bookings[0]%>
   <%= simple_form_for [@inspection, @booking] do |f| %>
