@@ -5,6 +5,7 @@ const initFlatpickr = () => {
     enableTime:true,
     dateTime: true,
     altInput: true,
+    inline:true,
     altFormat: 'd/m/Y H:i',
     dateFormat: 'Y-m-d H:i',
   });

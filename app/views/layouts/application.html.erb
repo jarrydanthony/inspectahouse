@@ -26,9 +26,9 @@
 
       <!-- implement mapbox only on index, show, dashboard -->
 
-      <div class="container-fluid pr-0">
+      <div class="container-fluid pr-0 pl-0">
         <div class="row">
-          <div class=" col-<%= action_name == 'home' ? '12' : '4' %>"><%= yield %>
+          <div class="pr-0 col-<%= action_name == 'home' ? '12' : '4' %>"><%= yield %>
           </div>
           <% if ["index", "show", "dashboard"].include? action_name %>
           <div class=" col-8 pl-0">
