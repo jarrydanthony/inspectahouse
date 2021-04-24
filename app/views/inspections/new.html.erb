@@ -1,12 +1,12 @@
 
-<div class="container my-3">
+<div class=" create container my-3 ml-1 ">
   <%= simple_form_for(@inspection) do |f| %>
     <%= f.input :location %>
     <%= f.input :date,label: false, as: :string, required: true, input_html: {class: "datepicker js-flatpickr-dateTime"} %>
 
 
     <%#= f.input :time, label: "Start Time"%>
-    <%= f.input :payment_amount, label: "Budget" %>
+    <%= f.input :payment_amount, label: "Budget", input_html: {value: f.object.payment_amount || '$'} %>
     <%= f.input :description, :as => :text %>
     <%= button_tag(type: 'submit', class: "btn btn-success") do %>
     <i class="icon-ok icon-white"></i> Create
