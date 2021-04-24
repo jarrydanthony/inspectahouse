@@ -1,10 +1,10 @@
 <!-- <h1 style="text-align:center">Inspections</h1> -->
 
 
-<div class="container">
-    <div class="row justify-content-center">
+<div class="contain">
+    <div class="row">
         <% @inspections.each do |inspection| %>
-            <div class="card" style="width: 20rem">
+            <div class="card index-card" style="width: 20rem">
                 <img class="card-img-top" src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1143&q=80" alt="Card image top">
                 <div class="card-body">
                     <h5><strong><%= link_to inspection.location, inspection_path(inspection), :class => "text-dark" %></strong> </h5>
