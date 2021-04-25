@@ -2,13 +2,23 @@
 
 
 .jumbotron {
-  // background-image: url(/assets/house_new-ffefdffcbce8aba8352679ab22476d70b16d24703cb697cad6aed3ae9d307560.jpg);
-  background-size: cover;
+  background-color: #eae8e6;
   position: absolute;
-  background-position: right;
-  height: 100vh;
+  height: calc(100vh - 60px);
   width: 100vw;
   top:0px;
+  margin: 0px;
+}
+
+.door {
+  height:90%;
+  width:400px;
+  position: absolute;
+  right:0;
+  bottom:0;
+  background-image: url(/assets/new_house-cdccac550d1b3bb4a7355b6a1965f7bba4ae468e2211fd02134539e0af65e27b.png);
+  background-size: cover;
+  // background-position: right;
 }
 
 .call-to-action {
@@ -34,4 +44,3 @@
 .display-4 {
   color: white;
 }
-
