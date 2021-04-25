@@ -1,5 +1,6 @@
 <div class="jumbotron">
-  <div class="container login-screen ml-3">
+
+  <div class="container login-screen ml-3 my-3">
   <h2>Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -22,4 +23,10 @@
 
   <%= render "devise/shared/links" %>
   </div>
+
+  <div class="door">
+<!-- png image of the door goes here -->
+<!-- if @media xs - hide door -->
+  </div>
+
 </div>
