@@ -57,7 +57,7 @@ class InspectionsController < ApplicationController
   private
 
   def inspection_params
-    params.require(:inspection).permit(:payment_amount, :location, :date, :time, :finish_time, :description)
+    params.require(:inspection).permit(:payment_amount, :location, :date, :time, :description)
   end
 
   def find_inspection

@@ -1,40 +1,37 @@
 .navbar-lewagon {
   justify-content: space-between;
-  // background: linear-gradient(45deg, #F8F8F8, transparent);
-  // background-color: rgba(255,255,255,0.5);
   background-color: #E4F1E4;
   position:sticky;
   top: 0px;
-  // width:100vw;
   z-index: 999;
   height:60px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar-toggler {
-  border: none;
-  background: transparent !important;
+// .navbar-toggler {
+//   border: none;
+//   background: transparent !important;
 
-  &:hover {
-    background: transparent !important;
-  }
+//   &:hover {
+//     background: transparent !important;
+//   }
 
-  .icon-bar {
-    width: 22px;
-    transition: all 0.2s;
-  }
-  .top-bar {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
-  }
-  .middle-bar {
-    opacity: 0;
-  }
-  .bottom-bar {
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
-  }
-}
+//   .icon-bar {
+//     width: 22px;
+//     transition: all 0.2s;
+//   }
+//   .top-bar {
+//     transform: rotate(45deg);
+//     transform-origin: 10% 10%;
+//   }
+//   .middle-bar {
+//     opacity: 0;
+//   }
+//   .bottom-bar {
+//     transform: rotate(-45deg);
+//     transform-origin: 10% 90%;
+//   }
+// }
 
 // .box {
 //   width:200px;
@@ -49,6 +46,10 @@
   width: auto;
   // text-shadow: 1px 1px 1px grey;
   font-size: 20px;
+
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #058F12;
 }
 
 .navbar-collapse {
@@ -59,17 +60,25 @@
   list-style: none;
   text-decoration: none;
   margin-top: 2px;
+  color: #0ea800;
 }
 
 .nav-link {
   font-family: Arial, Helvetica, sans-serif;
   color: #0ea800;
+  padding:0px;
   // text-shadow: 1px 1px 1px grey;
 }
 
-.nav-link:hover{
-  color: white;
+.nav_btn{
+  margin-left: 5px;
+  border: 1px solid #058F12;
+  width:104px;
 }
+.dash_btn{
+  padding-left: 4px;
+}
+
 
 .pro {
   position:absolute;

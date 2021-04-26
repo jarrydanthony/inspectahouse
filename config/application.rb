@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Inspectahouse
   class Application < Rails::Application
+    # config.time_zone = 'Melbourne'
     config.generators do |generate|
       generate.assets false
       generate.helper false

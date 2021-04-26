@@ -1,7 +1,17 @@
-.datepicker {
+.datepicker, .timepicker {
   border: 0px solid;
   height: 0px;
   padding: 0px;
   margin-top: 2px;
   padding-top: 0px;
+}
+
+.inspection_date{
+  visibility: hidden;
+}
+
+.scroller_new {
+  overflow:scroll;
+  height:95%;
+  width:338px;
 }

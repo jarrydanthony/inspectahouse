@@ -1,6 +1,9 @@
-<div class="ml-5">
+<div class="fixed-width ml-1 pl-5">
 <h1 > Dashboard </h1>
   <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+</div>
+
+<div class="scroller_dash container">
 
   <ul class="nav nav-tabs align" id="myTab" role="tablist">
     <li class="nav-item">
@@ -10,11 +13,6 @@
       <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Inspections</a>
     </li>
   </ul>
-</div>
-
-<div class="scroller_dash container">
-
-
 
 
   <span class=" tab-content" id="myTabContent">

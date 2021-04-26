@@ -9,7 +9,7 @@
                     <h5><strong><%= link_to inspection.location, inspection_path(inspection), :class => "text-dark" %></strong> </h5>
                         <p><ul>
                             <li><strong>Date:</strong> <%= inspection.date %></li>
-                            <li>Start time: </strong> <%= inspection.time %></li>
+                            <li><strong>Start time:</strong> <%= inspection.time %></li>
                             <li><strong>Payment:</strong> <%= inspection.payment_amount %></li>
                             <%# <li><strong>Job Description: </strong> <%= inspection.description</li> %>
                             <%= link_to inspection.user.username, user_path(inspection.user_id), :class => "view-profile" %></li>

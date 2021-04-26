@@ -1,12 +1,18 @@
-<h1>Inspections#edit</h1>
+<div class=" scroller_new container my-3 ml-1 ">
+    <%= simple_form_for(@inspection) do |f| %>
+      <%= f.input :location %>
+      <%= f.input :date,label: false, as: :string, required: true, input_html: {class: "datepicker js-flatpickr-dateTime"} %>
 
-<%= simple_form_for(@inspection) do |f| %>
-  <%= f.input :location %>
-  <%= f.input :date, :order => [:day, :month, :year]
-%>
-  <%= f.input :time, label: "Start Time"%>
-  <%= f.input :finish_time%>
-  <%= f.input :payment_amount%>
-  <%= f.input :description %>
-  <%= f.submit %>
-<% end %>
+
+      <%= f.input :time, label: false, as: :string, required: true, input_html: {class: "timepicker"}%>
+
+      <%= f.input :payment_amount, label: "Budget", input_html: {value: f.object.payment_amount || '$'} %>
+      <%= f.input :description, :as => :text %>
+      <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+      <i class="icon-ok icon-white"></i> Update
+    <% end %>
+    <% end %>
+  </div>
+
+
+

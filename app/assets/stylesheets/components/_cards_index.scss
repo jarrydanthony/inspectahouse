@@ -4,8 +4,15 @@
   width:100%;
   overflow:hidden;
 }
-// .card-container{
-//   width:402px;
-// }
+.map_width{
+  padding-left:0px;
+  padding-right: 0px;
+}
 
+.scroller_index{
+  overflow:scroll;
+  height:100%;
+  width:338px;
+  padding-left:5px;
+}
 
