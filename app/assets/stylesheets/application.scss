@@ -18,6 +18,7 @@
 
 html, body {
     max-width: 100%;
+    overflow:hidden;
 }
 
 h1{
@@ -72,3 +73,49 @@ h2{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
   }
+
+.page {
+  display: table;
+  width: 100vw;
+}
+.page-content,
+.sidebar {
+  display: table-cell;
+}
+.sidebar {
+  width: 350px;
+}
+.gold {
+  background-color: gold;
+}
+
+.scroller_new {
+  overflow:scroll;
+  height:95%;
+  width:338px;
+}
+.scroller_index{
+  overflow:scroll;
+  height:100%;
+  width:338px;
+  padding-left:5px;
+}
+.scroller_dash{
+  overflow:scroll;
+  height:100%;
+  width:338px;
+  padding-left:5px;
+  padding-right:0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.fix_contain{
+  margin-right:0px;
+  margin-left: 0px;
+  padding-left:7px;
+}
+.map_width{
+  padding-left:0px;
+  padding-right: 0px;
+}

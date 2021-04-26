@@ -1,5 +1,5 @@
-<div class="jumbotron">
-  <div class=" create container my-3 ml-1 ">
+
+  <div class=" scroller_new container my-3 ml-1 ">
     <%= simple_form_for(@inspection) do |f| %>
       <%= f.input :location %>
       <%= f.input :date,label: false, as: :string, required: true, input_html: {class: "datepicker js-flatpickr-dateTime"} %>
@@ -18,4 +18,4 @@
 <!-- png image of the door goes here -->
 <!-- if @media xs - hide door -->
   </div>
-</div>
+

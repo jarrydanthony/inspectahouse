@@ -1,5 +1,6 @@
-<div class="container">
-  <h1 class="text-center"> Dashboard </h1>
+<div class="ml-5">
+<h1 > Dashboard </h1>
+  <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
 
   <ul class="nav nav-tabs align" id="myTab" role="tablist">
     <li class="nav-item">
@@ -9,8 +10,14 @@
       <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Inspections</a>
     </li>
   </ul>
- 
-  <span class="tab-content" id="myTabContent">
+</div>
+
+<div class="scroller_dash container">
+
+
+
+
+  <span class=" tab-content" id="myTabContent">
     <span class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <%@my_bookings.each do |booking| %>
 
@@ -21,14 +28,15 @@
       <% end %>
     </span>
     <span class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <% @my_inspections.each do |inspection| %>
-      <% inspection.bookings.each do |booking| %>
-          
-        <h5> Email: <%= booking.user.email %> </h5>
-        <h5> Note: <%= booking.note %> </h5>
-        <h5> Status: <%= booking.status %> </h5>
+      <% @my_inspections.each do |inspection| %>
+        <% inspection.bookings.each do |booking| %>
 
+          <h5> Email: <%= booking.user.email %> </h5>
+          <h5> Note: <%= booking.note %> </h5>
+          <h5> Status: <%= booking.status %> </h5>
+
+        <% end %>
       <% end %>
-    <% end %>
+    </span>
   </span>
 </div>

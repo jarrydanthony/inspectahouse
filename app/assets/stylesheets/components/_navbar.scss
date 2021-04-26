@@ -10,6 +10,32 @@
   height:60px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
 // .box {
 //   width:200px;
 //   border: 1px solid grey;
