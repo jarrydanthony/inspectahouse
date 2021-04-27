@@ -1,6 +1,6 @@
 <div class=" scroller_new container my-3 ml-1 ">
     <%= simple_form_for(@inspection) do |f| %>
-      <%= f.input :location %>
+      <%= f.input :location, required: true %>
       <%= f.input :date,label: false, as: :string, required: true, input_html: {class: "datepicker js-flatpickr-dateTime"} %>
 
 

@@ -1,63 +1,26 @@
-<div class="scroller_index">
-  <img class="card-img-top" src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1143&q=80" alt="Card image top">
-  <div class="row">
-  <h4 class="show-content">
-    <ul class="ul">
-      <li>Location: <%= @inspection.location %></li>
-      <li>Date: <%= @inspection.date %></li>
-      <li>Start time: <%= @inspection.time %></li>
-      <!-- <li>Finish time: <%#= @inspection.finish_time %></li> -->
-      <li>Payment: <%= @inspection.payment_amount %></li>
-      <li>Job Description: <%= @inspection.description %></li>
-      <li>View Profile: <%= link_to @inspection.user.username, user_path(@inspection.user_id)%></li>
-    </ul></h4>
-  </div>
+<%= link_to "Show all inspections", inspections_path %>
+
+<div class="scroller_index ml-0">
+    <div class="row card-container">
+      <div class="col ">
+
+        <div class=" card index-card">
+          <h4 class="show-content">
+            <ul class="ul pl-0 ml-1 ">
+              <li><%= @inspection.location.truncate(27, separator: /\s/) %></li>
+              <li><%= @inspection.date.strftime('%B %e, %Y') %></li>
+              <li><%= @inspection.time.to_time.strftime('%H:%M %p') %></li>
+              <!-- <li>Finish time: <%#= @inspection.finish_time %></li> -->
+              <li><%= @inspection.payment_amount %></li>
+              <li><%= @inspection.description %></li>
+              <li><%= link_to @inspection.user.username, user_path(@inspection.user_id)%></li>
+            </ul></h4>
+
+            <%= link_to "Edit inspection", edit_inspection_path(@inspection), :class => "btn btn-success" %>
+          <%= link_to "Delete inspection", inspection_path(@inspection), method: :delete, :class => "btn btn-danger" %>
+        </div>
 
 
-  <%= link_to "Edit inspection", edit_inspection_path(@inspection), :class => "btn btn-success" %>
-  <%= link_to "Delete inspection", inspection_path(@inspection), method: :delete, :class => "btn btn-danger" %>
-
-  <h3> Bookings: </h3>
-  <% @bookings.each do |booking| %>
-
-    <h5> username: <%= link_to booking.user.email, booking_path(booking) %> </h5>
-
-    <h5> note: <%= booking.note %> </h5>
-
-    <h5> status: <%= booking.status %> </h5>
-    <br/>
-    <%= link_to "Accept", accept_booking_path(booking), method: :patch %>
-    <%= link_to "Reject", reject_booking_path(booking), method: :patch %>
-    <%= link_to "Remove",
-                  booking_path(booking),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-
-  <% end %>
-  <br/>
-  <%= link_to "Show all inspections", inspections_path %>
-
-  <% if current_user and !@pending_booking and !@active_bookings[0]%>
-  <%= simple_form_for [@inspection, @booking] do |f| %>
-    <%= f.input :note %>
-    <%= f.submit %>
-  <% end %>
-  <% end %>
-
-  <%= simple_form_for [@inspection, @comment] do |f| %>
-    <%= f.input :private, :as => :hidden, :input_html => { :value => false } %>
-    <%= f.input :description %>
-    <%= f.submit %>
-  <% end %>
-
-  Comments:
-  <% @comments.each do |comment| %>
-    <h5> <%= comment.user.username %> </h5>
-    <h6> <%= comment.description %> </h6>
-
-    <% if comment.user == current_user %>
-    <div> <%= link_to "Edit", edit_comment_path(comment)%> </div>
-    <div> <%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "Are you sure?" }%> </div>
-    <% end %>
-  <% end %>
+      </div>
+    </div>
 </div>
