@@ -7,9 +7,9 @@
         <div class=" card index-card">
           <h4 class="show-content">
             <ul class="ul pl-0 ml-1 ">
-              <li><%= @inspection.location.truncate(27, separator: /\s/) %></li>
-              <li><%= @inspection.date.strftime('%B %e, %Y') %></li>
+              <li><%= @inspection.location.truncate(25, separator: /\s/) %></li>
               <li><%= @inspection.time.to_time.strftime('%H:%M %p') %></li>
+              <li><%= @inspection.date.strftime('%B %e') %></li>
               <!-- <li>Finish time: <%#= @inspection.finish_time %></li> -->
               <li><%= @inspection.payment_amount %></li>
               <li><%= @inspection.description %></li>

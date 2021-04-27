@@ -9,10 +9,69 @@
     width:308px;
 
 }
+.card_type {
+  height:60px;
+  width:60px;
+  border:1px solid red;
+  position:absolute;
+  top:0;
+  left:0;
+}
+.top_sec {
+  position:absolute;
+  // border:1px solid yellow;
+  width:191px;
+  top: 7px;
+  left: 69px;
+}
+
 .price {
   position: absolute;
   right:0;
   top:0;
+  width:50px;
+  height:30px;
+  // border:1px solid black;
+  background-color: darkgrey;
+  text-align: center;
+}
+h6 {
+  line-height: 30px;
+  color: white;
+
+}
+span {
+  margin-left: 20px;
+}
+
+.desc{
+  // border:1px solid blue;
+  height:50px;
+  width:95%;
+  position:relative;
+  bottom: -30px;
+  left: -28px;
+  overflow:hidden;
+}
+.view {
+  // border:1px solid green;
+  background-color: green;
+  border-radius: 3px;
+  height:39px;
+  width:55px;
+  position:absolute;
+  bottom:6px;
+  right:6px;
+  text-align: center;
+
+}
+h2 {
+  line-height:39px;
+
+}
+.view a {
+  text-decoration: none;
+  color:white;
 }
 
 .card-img-top {
