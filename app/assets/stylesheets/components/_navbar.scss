@@ -48,9 +48,10 @@
   font-size: 20px;
 
 }
-.navbar-light .navbar-nav .nav-link {
-    color: #058F12;
-}
+// .navbar-light .navbar-nav .nav-link {
+//     color: #058F12;
+// }
+
 
 .navbar-collapse {
   flex-grow: 0;
@@ -65,7 +66,6 @@
 
 .nav-link {
   font-family: Arial, Helvetica, sans-serif;
-  color: #0ea800;
   padding:0px;
   // text-shadow: 1px 1px 1px grey;
 }
@@ -74,7 +74,15 @@
   margin-left: 5px;
   border: 1px solid #058F12;
   width:104px;
+  color:white;
 }
+
+.nav_btn:hover {
+  background-color: white;
+  border: 1px solid #058F12;
+
+}
+
 .dash_btn{
   padding-left: 4px;
 }

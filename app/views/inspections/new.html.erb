@@ -1,7 +1,7 @@
 
   <div class=" scroller_new container my-3 ml-0 ">
     <%= simple_form_for(@inspection) do |f| %>
-      <%= f.input :location, required: true %>
+      <%= f.input :location,label: false, required: true, placeholder:"Location" %>
       <%= f.input :date,label: false, as: :string, required: true, input_html: {class: "datepicker js-flatpickr-dateTime"} %>
 
 
@@ -15,8 +15,9 @@
           :item_wrapper_class => 'inline',
           :checked => true %>
 
-      <%= f.input :payment_amount, label: "Budget", required: true, input_html: {value: f.object.payment_amount || '$'} %>
-      <%= f.input :description, :as => :text %>
+      <%= f.input :payment_amount, label: false, required: true, placeholder:"Budget: $" %>
+      <%#= f.input :payment_amount, label: "Budget", required: true, input_html: {value: f.object.payment_amount || '$'} %>
+      <%= f.input :description, label: false, :as => :text, placeholder:"Description:" %>
       <%= button_tag(type: 'submit', class: "btn btn-success") do %>
       <i class="icon-ok icon-white"></i> Create
     <% end %>

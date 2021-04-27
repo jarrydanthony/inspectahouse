@@ -3,6 +3,7 @@
 .jumbotron {
   background-color: #eae8e6;
   position: absolute;
+  // z-index: -2;
   height: calc(100vh - 60px);
   width: 100vw;
   top:60px;
@@ -20,6 +21,7 @@
   height:90%;
   width:400px;
   position: absolute;
+  // z-index: -1;
   right:0;
   bottom:0;
   background-image: url(/assets/new_house-cdccac550d1b3bb4a7355b6a1965f7bba4ae468e2211fd02134539e0af65e27b.png);
@@ -29,10 +31,9 @@
 
 .call-to-action {
   height:180px;
-  width: 400px;
+  width: 100%;
   margin:auto;
   // background-color: lightgrey;
-
 }
 
 .action{
@@ -43,10 +44,23 @@
   border-radius: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
+  border: 1px solid white;
   color: white;
   background-color: #019013;
+}
+.btn-lg:hover {
+  background-color: white;
+  color:#019013;
+  border: 1px solid #019013;
 }
 
 .display-4 {
   color: white;
+}
+.hide_xs{
+  width:338px;
+  border: 1px solid #019013;
+  border-radius: 2px;
+  margin-bottom:0px;
+  background-color: white;
 }

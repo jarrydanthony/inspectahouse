@@ -9,6 +9,11 @@
     width:308px;
 
 }
+.price {
+  position: absolute;
+  right:0;
+  top:0;
+}
 
 .card-img-top {
     padding: 1px;
@@ -22,9 +27,9 @@ li {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.view-profile {
-    float: right;
-}
+// .view-profile {
+//     float: right;
+// }
 
 .content {
     float: left;
