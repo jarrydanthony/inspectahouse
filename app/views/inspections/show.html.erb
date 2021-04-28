@@ -4,7 +4,7 @@
     <div class="row card-container">
       <div class="col ">
 
-        <div class="card index-card"> <!-- style="width: 20rem" -->
+        <div class="show-card card index-card"> <!-- style="width: 20rem" -->
 
           <div class="card_type"></div>
           <div class="top_sec">
@@ -41,9 +41,9 @@
 
                   <h5> username: <%= link_to booking.user.email, booking_path(booking) %> </h5>
 
-                  <h5> note: <%= booking.note %> </h5>
+                  <%= booking.note %>
 
-                  <h5> status: <%= booking.status %> </h5>
+                  <%#= booking.status %>
                   <br/>
                   <%= link_to "Accept", accept_booking_path(booking), method: :patch %>
                   <%= link_to "Reject", reject_booking_path(booking), method: :patch %>
@@ -54,11 +54,13 @@
 
                 <% end %>
                 <% if current_user and !@pending_booking and !@active_bookings[0]%>
+                <div class="float-down">
                   <%= simple_form_for [@inspection, @booking] do |f| %>
-                    <%= f.input :note %>
-                    <%= f.submit %>
+                    <div class="in-block"> <%= f.input :note, label: false %> </div>
+                    <div class="in-block"><%= f.submit %> </div>
                   <% end %>
                 <% end %>
+                </div>
               </span>
               <span class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <% @comments.each do |comment| %>
@@ -70,11 +72,13 @@
                   <div> <%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "Are you sure?" }%> </div>
                   <% end %>
                 <% end %>
-                <%= simple_form_for [@inspection, @comment] do |f| %>
-                  <%= f.input :private, :as => :hidden, :input_html => { :value => false } %>
-                  <%= f.input :description %>
-                  <%= f.submit %>
-                <% end %>
+                <div class="float-down">
+                  <%= simple_form_for [@inspection, @comment] do |f| %>
+                    <%= f.input :private, :as => :hidden, :input_html => { :value => false } %>
+                   <div class="in-block"> <%= f.input :description %> </div>
+                   <div class="in-block"> <%= f.submit %> </div>
+                  <% end %>
+                </div>
               </span>
             </span>
 

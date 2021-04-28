@@ -1,4 +1,4 @@
-<div class=" scroller_new container my-3 ml-1 ">
+  <div class=" scroller_new container my-3 ml-1 ">
     <%= simple_form_for(@inspection) do |f| %>
       <%= f.input :location, required: true %>
       <%= f.input :date,label: false, as: :string, required: true, input_html: {class: "datepicker js-flatpickr-dateTime"} %>
@@ -12,6 +12,9 @@
       <i class="icon-ok icon-white"></i> Update
     <% end %>
     <% end %>
+  </div>
+  <div class="door">
+<!-- png image of the door goes here -->
   </div>
 
 

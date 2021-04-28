@@ -1,3 +1,5 @@
+
+
 .card {
 
     display: inline-block;
@@ -8,29 +10,27 @@
     position: relative;
     width:308px;
     padding:0px;
+}
+.show-card{
+  height: calc(100vh - 100px);
+}
 
+// inside index card
+.card_type {
+  height:60px;
+  width:60px;
+  display:inline-block
 }
 .card-body{
   padding:0px;
 }
 
-.card_type {
-  height:60px;
-  width:60px;
-  // border:1px solid red;
-  display:inline-block
-
-  // position:absolute;
-  // top:0;
-  // left:0;
-}
 .top_sec {
-  // position:absolute;
-  // border:1px solid yellow;
   width:191px;
   display:inline-block
-  // top: 7px;
-  // left: 69px;
+}
+.top_sec span {
+  margin-left: 20px;
 }
 
 .price {
@@ -46,11 +46,6 @@
 .price h6 {
   line-height: 30px;
   color: white;
-
-}
-
-.top_sec span {
-  margin-left: 20px;
 }
 
 .desc{
@@ -58,9 +53,9 @@
   height:50px;
   width:75%;
   padding-left: 5px;
-
   overflow:hidden;
 }
+
 .view {
   // border:1px solid green;
   background-color: green;
@@ -71,32 +66,31 @@
   bottom:6px;
   right:6px;
   text-align: center;
-
 }
-h2 {
+.view h2 {
   line-height:39px;
-
 }
 .view a {
   text-decoration: none;
   color:white;
 }
-
-.card-img-top {
-    padding: 1px;
+// inside show card
+.float-down{
+  position:absolute;
+  bottom:0;
+}
+.in-block{
+  display:inline-block;
 }
 
-.text-dark {
-    font-family: Arial, Helvetica, sans-serif;
-}
+
+// .text-dark {
+//     font-family: Arial, Helvetica, sans-serif;
+// }
 
 li {
     font-family: Arial, Helvetica, sans-serif;
 }
-
-// .view-profile {
-//     float: right;
-// }
 
 .content {
     float: left;
@@ -106,6 +100,6 @@ li {
     list-style: none;
     justify-content: left;
 }
-.padding_bottom {
-  height:300px;
-}
+// .padding_bottom {
+//   height:300px;
+// }

@@ -32,7 +32,7 @@
             <%= yield %>
           </div>
         </div>
-        <% if ["index", "show", "dashboard"].include? action_name %>
+        <% if ["index", "show", "dashboard", ].include? action_name %>
         <div class="page-content">
           <div class="row map_row">
             <div class="map_width col-<%= (action_name == "home" || action_name == "new") ? '0' : '12' %>">
