@@ -1,6 +1,6 @@
 <%= link_to "Show all inspections", inspections_path %>
 
-<div class="scroller_index ml-0">
+<div class="scroller_index no-scroll ml-0">
     <div class="row card-container">
       <div class="col ">
 
@@ -24,6 +24,63 @@
             </div>
             <%= link_to "Edit", edit_inspection_path(@inspection), :class => "btn btn-success" %>
             <%= link_to "Delete", inspection_path(@inspection), method: :delete, :class => "btn btn-danger" %>
+
+          <div class="container">
+            <ul class="nav nav-tabs align" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Offers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Comments</a>
+              </li>
+            </ul>
+
+            <span class=" tab-content" id="myTabContent">
+              <span class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <% @bookings.each do |booking| %>
+
+                  <h5> username: <%= link_to booking.user.email, booking_path(booking) %> </h5>
+
+                  <h5> note: <%= booking.note %> </h5>
+
+                  <h5> status: <%= booking.status %> </h5>
+                  <br/>
+                  <%= link_to "Accept", accept_booking_path(booking), method: :patch %>
+                  <%= link_to "Reject", reject_booking_path(booking), method: :patch %>
+                  <%= link_to "Remove",
+                                booking_path(booking),
+                                method: :delete,
+                                data: { confirm: "Are you sure?" } %>
+
+                <% end %>
+                <% if current_user and !@pending_booking and !@active_bookings[0]%>
+                  <%= simple_form_for [@inspection, @booking] do |f| %>
+                    <%= f.input :note %>
+                    <%= f.submit %>
+                  <% end %>
+                <% end %>
+              </span>
+              <span class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <% @comments.each do |comment| %>
+                  <h5> <%= comment.user.username %> </h5>
+                  <h6> <%= comment.description %> </h6>
+
+                  <% if comment.user == current_user %>
+                  <div> <%= link_to "Edit", edit_comment_path(comment)%> </div>
+                  <div> <%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "Are you sure?" }%> </div>
+                  <% end %>
+                <% end %>
+                <%= simple_form_for [@inspection, @comment] do |f| %>
+                  <%= f.input :private, :as => :hidden, :input_html => { :value => false } %>
+                  <%= f.input :description %>
+                  <%= f.submit %>
+                <% end %>
+              </span>
+            </span>
+
+
+          </div>
+
         </div>
 
 

@@ -106,3 +106,10 @@ h2{
   padding-right: 0px;
   border-left:2px solid green;
 }
+.no-scroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
