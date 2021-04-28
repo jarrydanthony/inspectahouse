@@ -12,7 +12,12 @@ class InspectionsController < ApplicationController
     @inspection = Inspection.new(inspection_params)
     @inspection.user = current_user
     @inspection.save
+
+    if @inspection.save
     redirect_to inspection_path(@inspection)
+    end
+    # raise
+    # end
   end
 
   def edit

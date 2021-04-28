@@ -27,6 +27,7 @@ import "bootstrap";
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initAlert } from '../plugins/init_form_alert';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -36,5 +37,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initFlatpickr();
   initAutocomplete();
+  initAlert();
   console.log('turbolinks load');
 });
