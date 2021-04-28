@@ -7,9 +7,11 @@
             <div class="card index-card"> <!-- style="width: 20rem" -->
                 <!-- <img class="card-img-top" src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1143&q=80" alt="Card image top"> -->
                 <div class="card-body">
-                  <div class="card_type"></div>
+                  <div class="card_type">
+                    <!-- image goes here -->
+                  </div>
                   <div class="top_sec">
-                   <%= link_to inspection.location.truncate(27, separator: /\s/), inspection_path(inspection), :class => "text-dark" %><br>
+                   <%= inspection.location.truncate(27, separator: /\s/)%><br>
                     <%= inspection.date.strftime('%e %b') %>
                     <span> <%= inspection.time.to_time.strftime('%H:%M') %></span>
                   </div>
