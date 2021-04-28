@@ -4,9 +4,16 @@
     <div class="col ">
       <div class="show-card card index-card"> <!-- style="width: 20rem" -->
         <div class="card-body">
-          <div class="fixed-width ml-1 pl-5">
-          <h1 > Dashboard </h1>
+          <div class="fixed-width mt-3 ml-1 pl-3">
+          <!-- <h1 > Dashboard </h1> -->
+            <div class="user_lg">
+            <%= @current_user.username %>
+            </div>
+
+            <%#= link_to 'Edit', user_path %>
+            <div class="log-out">
             <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </div>
           </div>
         </div>
           <ul class="nav nav-tabs align" id="myTab" role="tablist">

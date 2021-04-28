@@ -102,11 +102,6 @@
 }
 
 .view {
-  // // border:1px solid green;
-  // background-color: green;
-  // border-radius: 3px;
-  // height:35px;
-  // width:55px;
   position:absolute;
   bottom:6px;
   right:6px;
@@ -130,32 +125,32 @@
 // }
 
 // inside show card
-.float-down{
-  position:absolute;
-  bottom:0;
-}
-.form_note{
-  width:50%
-}
+
 .show_controls {
   margin-left:40px;
 }
 
-// .text-dark {
-//     font-family: Arial, Helvetica, sans-serif;
-// }
-
 li {
     font-family: Arial, Helvetica, sans-serif;
 }
-
 .content {
     float: left;
 }
-
 .ul {
     list-style: none;
     justify-content: left;
 }
 
+// inside dash card
+.user_lg {
+  height:60px;
+  width:60px;
+  margin-left: 5px;
+  padding-left: 4px;
+  border:1px solid pink;
+  border-radius:50%;
+  overflow:hidden;
+  margin-bottom: 2px;
+  line-height:60px;
+}
 
