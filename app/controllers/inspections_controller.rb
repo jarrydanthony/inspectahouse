@@ -1,5 +1,5 @@
 class InspectionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :find_inspection, only: [:edit, :show, :update, :destroy]
 
   def new
