@@ -23,7 +23,7 @@
             <span class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <%@my_bookings.each do |booking| %>
 
-              <h5> <%= link_to booking.user.email, booking_path(booking)%> </h5>
+              <h5> <%= link_to booking.user.username, booking_path(booking)%> </h5>
               <h5> Note: <%= booking.note %> </h5>
               <h5> Status: <%= booking.status %> </h5>
 
@@ -33,7 +33,7 @@
               <% @my_inspections.each do |inspection| %>
                 <% inspection.bookings.each do |booking| %>
 
-                  <h5> Email: <%=link_to booking.user.email, booking_path(booking)%> </h5>
+                  <h5> Email: <%=link_to booking.user.username, booking_path(booking)%> </h5>
                   <h5> Note: <%= booking.note %> </h5>
                   <h5> Status: <%= booking.status %> </h5>
 
