@@ -6,24 +6,36 @@
 
         <div class="show-card card index-card"> <!-- style="width: 20rem" -->
 
-          <div class="card_type"></div>
-          <div class="top_sec">
-           <%= @inspection.location.truncate(27, separator: /\s/) %><br>
-            <%= @inspection.date.strftime('%e %b') %>
-            <span> <%= @inspection.time.to_time.strftime('%H:%M') %></span>
-          </div>
-
           <div class="card-body">
-              <div class="desc">
-                 <%= link_to @inspection.user.username, user_path(@inspection.user_id)%>
-                 <%= @inspection.description %>
+            <div class="card_type">
+              <i class="fas fa-home"></i>
+            </div>
+            <div class="top_sec">
+             <%= @inspection.location.truncate(25, separator: /\s/, omission: '')%><br>
+              <%= @inspection.date.strftime('%e %b') %>
+              <span> <%= @inspection.time.to_time.strftime('%H:%M') %></span>
+            </div>
+            <div class="bot_sec">
+              <div class="user">
+                <%= link_to @inspection.user.username, user_path(@inspection.user_id)%>
               </div>
-              <div class="price">
-                <h6><strong>$<%= @inspection.payment_amount %></strong></h6>
+              <div class="desc speech-bubble">
+
+                 <%= @inspection.description.truncate(40, separator: /\s/, omission: '...') %>
               </div>
             </div>
+            <div class="price">
+              <h6><strong>$<%= @inspection.payment_amount %></strong></h6>
+            </div>
+            <div class="view">
+
+            </div>
+          </div>
+
+          <div class="show_controls">
             <%= link_to "Edit", edit_inspection_path(@inspection), :class => "btn btn-success" %>
             <%= link_to "Delete", inspection_path(@inspection), method: :delete, :class => "btn btn-danger" %>
+          </div>
 
           <div class="container">
             <ul class="nav nav-tabs align" id="myTab" role="tablist">
@@ -56,8 +68,8 @@
                 <% if current_user and !@pending_booking and !@active_bookings[0]%>
                 <div class="float-down">
                   <%= simple_form_for [@inspection, @booking] do |f| %>
-                    <div class="in-block"> <%= f.input :note, label: false %> </div>
-                    <div class="in-block"><%= f.submit %> </div>
+                  <%= f.input :note, label: false, wrapper: :inline_form, html: { class: 'form-inline', item_label_class: 'form_note' } %>
+                    <%= f.submit  %>
                   <% end %>
                 <% end %>
                 </div>
@@ -75,8 +87,8 @@
                 <div class="float-down">
                   <%= simple_form_for [@inspection, @comment] do |f| %>
                     <%= f.input :private, :as => :hidden, :input_html => { :value => false } %>
-                   <div class="in-block"> <%= f.input :description %> </div>
-                   <div class="in-block"> <%= f.submit %> </div>
+                   <%= f.input :description, label: false, wrapper: :inline_form, html: { class: 'form-inline' } %>
+                   <%= f.submit %>
                   <% end %>
                 </div>
               </span>
