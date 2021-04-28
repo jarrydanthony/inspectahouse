@@ -1,5 +1,4 @@
 
-
 .card {
 
     display: inline-block;
@@ -7,6 +6,7 @@
     padding: 10px;
     margin: 5px;
     background-color: white;
+    border-radius:3px;
     position: relative;
     width:308px;
     padding:0px;
@@ -17,17 +17,26 @@
 
 // inside index card
 .card_type {
-  height:60px;
-  width:60px;
-  display:inline-block
+  height:40px;
+  width:40px;
+  margin-right: 0px;
+  display:inline-block;
+  text-align: center;
 }
+.fa-home{
+  font-size: 25px;
+  color: green;
+  line-height: 40px;
+}
+
 .card-body{
   padding:0px;
 }
 
 .top_sec {
-  width:191px;
-  display:inline-block
+  width:65%;
+  display:inline-block;
+  vertical-align: top;
 }
 .top_sec span {
   margin-left: 20px;
@@ -47,33 +56,76 @@
   line-height: 30px;
   color: white;
 }
+.user {
+  height:30px;
+  width:30px;
+  padding-left: 3px;
+  padding-top: 2px;
+  margin-left: 3px;
+  border:1px solid pink;
+  border-radius:50%;
+  overflow:hidden;
+  display:inline-block;
+  margin-bottom: 2px;
+}
 
 .desc{
   // border:1px solid blue;
-  height:50px;
-  width:75%;
+  height:45px;
+  width:65%;
   padding-left: 5px;
-  overflow:hidden;
+  display:inline-block;
+}
+.speech-bubble {
+  background: #efefef;
+  border-radius: 4px;
+  line-height: 1;
+  margin: 0 auto 4px;
+  max-width: 400px;
+  padding-top: 5px;
+  position: relative;
+
+  // this is the triangle at the bottom
+
+  // &::after {
+  //   border-left: 15px solid transparent;
+  //   border-top: 15px solid #efefef;
+  //   bottom: -10px;
+  //   content: "";
+  //   position: absolute;
+  //   left: 10px;
+  //   transform: rotateY(180deg);
+  // }
 }
 
 .view {
-  // border:1px solid green;
-  background-color: green;
-  border-radius: 3px;
-  height:39px;
-  width:55px;
+  // // border:1px solid green;
+  // background-color: green;
+  // border-radius: 3px;
+  // height:35px;
+  // width:55px;
   position:absolute;
   bottom:6px;
   right:6px;
   text-align: center;
 }
-.view h2 {
-  line-height:39px;
-}
-.view a {
-  text-decoration: none;
-  color:white;
-}
+
+// .view a {
+//   text-decoration: none;
+//   color:white;
+//   line-height:35px;
+//   font-weight: 1rem;
+// }
+// .view:hover{
+//   background-color: white;
+//   border:1px solid green;
+//   a {
+//     color:green;
+//     line-height:35px;
+//     font-weight: 1rem;
+//   }
+// }
+
 // inside show card
 .float-down{
   position:absolute;
@@ -100,6 +152,5 @@ li {
     list-style: none;
     justify-content: left;
 }
-// .padding_bottom {
-//   height:300px;
-// }
+
+
