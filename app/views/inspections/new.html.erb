@@ -3,6 +3,7 @@
     <div id="alert"></div>
     <%= simple_form_for(@inspection) do |f| %>
       <%= f.input :location,label: false, required: true, placeholder:"Location" %>
+      <!-- <p>type</p> -->
       <%= f.input :date,label: false, as: :string, required: true, input_html: {class: "datepicker js-flatpickr-dateTime"} %>
 
 

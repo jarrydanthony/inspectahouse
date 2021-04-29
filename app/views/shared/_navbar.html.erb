@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to image_tag("logo.png", alt: 'Logo', width:132.17, height:40), "/"%>
+    <%= link_to image_tag("logo.png", alt: 'Logo', width:132.17, height:39), "/"%>
     <!-- <li class="fas fa-house-user"></li> -->
     <h3 class="pro">| Pro
       <span>in development</span>
@@ -13,19 +13,19 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <button type="button" class="btn nav_btn btn"><%= link_to 'Hire', "/inspections/new", class: "nav-link"%></button>
+        <button type="button" class="btn-short btn nav_btn btn"><%= link_to 'Hire', "/inspections/new", class: "nav-link"%></button>
       </li>
       <li class="nav-item">
-        <button type="button" class="nav_btn btn"><%= link_to 'Become', "/inspections", class: "nav-link"%></button>
+        <button type="button" class="btn-short nav_btn btn"><%= link_to 'Become', "/inspections", class: "nav-link"%></button>
       </li>
       <% unless current_user.blank? %>
         <li class="nav-item">
-          <button type="button" class="dash_btn nav_btn btn"><%= link_to 'Dashboard', "/dashboard", class: "nav-link"%></button>
+          <button type="button" class="btn-short dash_btn nav_btn btn"><%= link_to 'Dashboard', "/dashboard", class: "nav-link"%></button>
 
         </li>
       <% else %>
         <li class="nav-item active">
-          <button type="button" class="btn nav_btn"><%= link_to "Login", new_user_session_path, class: "nav-link" %></button>
+          <button type="button" class="btn-short btn nav_btn"><%= link_to "Login", new_user_session_path, class: "nav-link" %></button>
 
         </li>
       <% end %>
