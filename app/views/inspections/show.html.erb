@@ -36,7 +36,7 @@
         <div>
           <ul class="nav nav-tabs align" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Offers</a>
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Offers</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Comments</a>
@@ -45,6 +45,16 @@
 
           <span class=" tab-content" id="myTabContent">
             <span class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+              <% if current_user and !@pending_booking and !@active_bookings[0]%>
+                  <div class="float-down">
+                    <%= simple_form_for [@inspection, @booking] do |f| %>
+                    <%= f.input :note, label: false, wrapper: :inline_form, html: { class: 'form-inline', item_label_class: 'form_note' } %>
+                      <%= f.submit 'Submit' %>
+                    <% end %>
+                  </div>
+                <% end %>
+
               <% @bookings.each do |booking| %>
 
                   <h5><%= link_to booking.user.username, booking_path(booking) %> </h5>
@@ -62,18 +72,20 @@
 
                 <% end %>
 
-                <% if current_user and !@pending_booking and !@active_bookings[0]%>
-                  <div class="float-down">
-                    <%= simple_form_for [@inspection, @booking] do |f| %>
-                    <%= f.input :note, label: false, wrapper: :inline_form, html: { class: 'form-inline', item_label_class: 'form_note' } %>
-                      <%= f.submit  %>
-                    <% end %>
-                  </div>
-                <% end %>
+
 
             </span>
 
             <span class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                <div class="float-down">
+                  <%= simple_form_for [@inspection, @comment] do |f| %>
+                    <%= f.input :private, :as => :hidden, :input_html => { :value => false } %>
+                   <%= f.input :description, label: false, wrapper: :inline_form, html: { class: 'form-inline' } %>
+                   <%= f.submit 'Send' %>
+                  <% end %>
+                </div>
+
                 <% @comments.each do |comment| %>
                   <h5> <%= comment.user.username %> </h5>
                   <h6> <%= comment.description %> </h6>
@@ -84,13 +96,7 @@
                   <% end %>
                 <% end %>
 
-                <div class="float-down">
-                  <%= simple_form_for [@inspection, @comment] do |f| %>
-                    <%= f.input :private, :as => :hidden, :input_html => { :value => false } %>
-                   <%= f.input :description, label: false, wrapper: :inline_form, html: { class: 'form-inline' } %>
-                   <%= f.submit %>
-                  <% end %>
-                </div>
+
             </span>
 
           </span>

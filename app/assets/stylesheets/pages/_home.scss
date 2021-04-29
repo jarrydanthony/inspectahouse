@@ -26,6 +26,9 @@
   width: 221px;
   height: 300px;
 }
+.call_btn{
+  margin-left:40px;
+}
 
 .hide_xs{
     width: 149px;
@@ -50,10 +53,16 @@
   background-size: cover;
   // background-position: right;
 }
+@media(max-width:500px){
+  .door {
+    visibility: hidden;
+  }
+}
+
 
 .call-to-action {
   height:180px;
-  width: 100%;
+  width: 62%;
   margin:auto;
   // background-color: lightgrey;
 }
@@ -66,7 +75,7 @@
   border-radius: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
-  border: 1px solid white;
+  border: 1px solid #019013;
   color: white;
   background-color: #019013;
 }

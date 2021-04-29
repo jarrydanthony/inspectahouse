@@ -140,6 +140,13 @@ li {
     list-style: none;
     justify-content: left;
 }
+#comment_description, #booking_note{
+  display:inline-block;
+  width:69%;
+}
+#comment_description {
+  margin-top: -15px;
+}
 
 // inside dash card
 .user_lg {
