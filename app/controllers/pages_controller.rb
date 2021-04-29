@@ -17,6 +17,12 @@ class PagesController < ApplicationController
     @my_bookings = current_user.bookings
 
     @my_inspections = current_user.inspections
-  end
 
+    @markers = @my_inspections.geocoded.map do |ins|
+      {
+        lat: ins.latitude,
+        lng: ins.longitude
+      }
+    end
+  end
 end

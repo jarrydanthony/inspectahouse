@@ -1,14 +1,32 @@
 
-<div class="container my-5">
-  <%= simple_form_for(@inspection) do |f| %>
-    <%= f.input :location %>
-    <%#= f.input :date, :order => [:day, :month] %>
-    <%= f.input :date, as: :string, required: true, input_html: {class: "datepicker"} %>
-    <%= f.input :time, label: "Start Time"%>
-    <%= f.input :payment_amount, label: "Budget" %>
-    <%= f.input :description, :as => :text %>
-    <%= button_tag(type: 'submit', class: "btn btn-success") do %>
-    <i class="icon-ok icon-white"></i> Create
-  <% end %>
-  <% end %>
-</div>
+  <div class=" scroller_new no-scroll container my-3 ml-0 ">
+    <div id="alert"></div>
+    <%= simple_form_for(@inspection) do |f| %>
+      <%= f.input :location,label: false, required: true, placeholder:"Location" %>
+      <%= f.input :date,label: false, as: :string, required: true, input_html: {class: "datepicker js-flatpickr-dateTime"} %>
+
+
+      <%= f.input :time, label: false, as: :string, required: true, input_html: {class: "timepicker"}%>
+
+      <%#= f.input :is_private,
+          :collection => [[true, 'Private'], [false, 'Public']],
+          :label_method => :last,
+          :value_method => :first,
+          :as => :radio_buttons,
+          :item_wrapper_class => 'inline',
+          :checked => true %>
+
+      <%= f.input :payment_amount, label: false, required: true, placeholder:"Budget: $" %>
+      <%#= f.input :payment_amount, label: "Budget", required: true, input_html: {value: f.object.payment_amount || '$'} %>
+      <%= f.input :description, label: false, :as => :text, placeholder:"Description:" %>
+      <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+      <i class="icon-ok icon-white"></i> Create
+    <% end %>
+    <% end %>
+  </div>
+
+  <div class="door">
+<!-- png image of the door goes here -->
+<!-- if @media xs - hide door -->
+  </div>
+

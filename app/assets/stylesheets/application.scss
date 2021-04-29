@@ -16,6 +16,10 @@
 
 @import 'flatpickr/dist/flatpickr';
 
+html, body {
+    max-width: 100%;
+    overflow:hidden;
+}
 
 h1{
     font-size: 48px;
@@ -27,14 +31,16 @@ h2{
     font-family: Arial, Helvetica, sans-serif;
 
 }
+.full-width {
+  max-width:100vh;
+  margin-right: 0px;
+}
+
 .absolute {
   position:absolute;
 }
 
-#map {
-  position: sticky;
-  top: 56px;
-}
+
 .a-primary{
     text-decoration: none;
     color: white;
@@ -56,14 +62,54 @@ h2{
     border-radius: 8px;
   }
 
-  .btn-danger {
+.btn-danger {
     border-radius: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: small;
     background-color: #FF385C;
   }
 
-  .new_inspection{
+.new_inspection{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
   }
+
+.page {
+  display: table;
+  width: 100vw;
+}
+.page-content,
+.sidebar {
+  display: table-cell;
+}
+.sidebar {
+  width: 335px;
+}
+.gold {
+  background-color: gold;
+}
+
+.fix_contain{
+  margin-right:0px;
+  margin-left: 0px;
+  padding-left:0px;
+  padding-right:0px;
+  margin-bottom: 30px;
+}
+.map_row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.map_width{
+  padding-left:0px;
+  padding-right: 0px;
+  border-left:2px solid green;
+}
+.no-scroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}

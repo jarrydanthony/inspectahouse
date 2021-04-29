@@ -1,5 +1,5 @@
 class InspectionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :find_inspection, only: [:edit, :show, :update, :destroy]
 
   def new
@@ -12,7 +12,12 @@ class InspectionsController < ApplicationController
     @inspection = Inspection.new(inspection_params)
     @inspection.user = current_user
     @inspection.save
+
+    if @inspection.save
     redirect_to inspection_path(@inspection)
+    end
+    # raise
+    # end
   end
 
   def edit
@@ -57,7 +62,7 @@ class InspectionsController < ApplicationController
   private
 
   def inspection_params
-    params.require(:inspection).permit(:payment_amount, :location, :date, :time, :finish_time, :description)
+    params.require(:inspection).permit(:payment_amount, :location, :date, :time, :description)
   end
 
   def find_inspection
