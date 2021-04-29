@@ -77,8 +77,17 @@
   color:lightgrey;
 
 }
+.pro span{
+  margin-left:-5px;
+  font-size:x-small;
+  visibility: hidden;
+}
 
 .pro:hover {
   color:white;
   cursor: default;
+  span{
+    color:white;
+    visibility:visible;
+  }
 }
