@@ -13,6 +13,13 @@ class BookingsController < ApplicationController
   def show
     @inspection = @booking.inspection
     @comment = Comment.new
+
+    # @markers = @inspection.geocoded.map do |ins|
+    #   {
+    #     lat: ins.latitude,
+    #     lng: ins.longitude
+    #   }
+    # end
   end
 
   def edit

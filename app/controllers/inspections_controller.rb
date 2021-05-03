@@ -5,7 +5,6 @@ class InspectionsController < ApplicationController
   def new
     index
     @inspection = Inspection.new
-
   end
 
   def create
