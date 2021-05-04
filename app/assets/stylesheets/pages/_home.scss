@@ -18,22 +18,21 @@
 }
 
 .door {
-  height:90%;
-  width:400px;
+  height:80%;
+  width:302px;
   position: absolute;
   // z-index: -1;
   right:0;
   bottom:0;
-  background-image: url(/assets/new_house-cdccac550d1b3bb4a7355b6a1965f7bba4ae468e2211fd02134539e0af65e27b.png);
+  background-image: url(/assets/door-fd4c19b2ac1fd0728c9bb65f5a6688225b69edf7d55014ecd7563e70bf455de5.png
+);
   background-size: cover;
-  // background-position: right;
 }
 
 .call-to-action {
   height:180px;
   width: 100%;
   margin:auto;
-  // background-color: lightgrey;
 }
 
 .action{

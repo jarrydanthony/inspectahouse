@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: #E4F1E4;
+  background-color: #eae8e6;
   position:sticky;
   top: 0px;
   z-index: 999;
@@ -8,25 +8,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-// .box {
-//   width:200px;
-//   border: 1px solid grey;
-//   position:absolute;
-//   right:0;
-//   margin-top:2px;
-//   justify-content: center;
-// }
-
 .active {
   width: auto;
-  // text-shadow: 1px 1px 1px grey;
   font-size: 20px;
 
 }
-// .navbar-light .navbar-nav .nav-link {
-//     color: #058F12;
-// }
-
 
 .navbar-collapse {
   flex-grow: 0;
@@ -42,7 +28,6 @@
 .nav-link {
   font-family: Arial, Helvetica, sans-serif;
   padding:0px;
-  // text-shadow: 1px 1px 1px grey;
 }
 .navbar-light .navbar-nav .nav-link {
   color: #058F12
