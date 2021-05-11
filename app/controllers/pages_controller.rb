@@ -14,6 +14,7 @@ class PagesController < ApplicationController
 
   def dashboard
     home
+    @current_user= current_user
     @my_bookings = current_user.bookings
 
     @my_inspections = current_user.inspections
