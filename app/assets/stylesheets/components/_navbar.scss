@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: #E4F1E4;
+  // background-color: #E4F1E4;
+  background-color: #eae8e6;
   position:sticky;
   top: 0px;
   z-index: 999;
@@ -26,7 +27,9 @@
 // .navbar-light .navbar-nav .nav-link {
 //     color: #058F12;
 // }
-
+.btn-short{
+  padding:1px;
+}
 
 .navbar-collapse {
   flex-grow: 0;
@@ -76,8 +79,17 @@
   color:lightgrey;
 
 }
+.pro span{
+  margin-left:-5px;
+  font-size:x-small;
+  visibility: hidden;
+}
 
 .pro:hover {
   color:white;
   cursor: default;
+  span{
+    color:white;
+    visibility:visible;
+  }
 }

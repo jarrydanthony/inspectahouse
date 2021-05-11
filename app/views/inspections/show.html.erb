@@ -1,57 +1,63 @@
 <%= link_to "Show all inspections", inspections_path %>
 
 <div class="scroller_index no-scroll ml-0">
-    <div class="row card-container">
-      <div class="col ">
+  <div class=" card-container">
+    <div class="col fix_contain">
+      <div class="show-card card index-card">
 
-        <div class="show-card card index-card"> <!-- style="width: 20rem" -->
+        <div class="card-body">
+          <div class="card_type">
+            <i class="fas fa-home"></i>
+          </div>
+          <div class="top_sec">
+           <%= @inspection.location.truncate(25, separator: /\s/, omission: '')%><br>
+            <%= @inspection.date.strftime('%e %b') %>
+            <span> <%= @inspection.time.to_time.strftime('%H:%M') %></span>
+          </div>
+          <div class="bot_sec">
+            <div class="user">
+              <%= link_to @inspection.user.username, user_path(@inspection.user_id)%>
+            </div>
+            <div class="desc speech-bubble">
 
-          <div class="card-body">
-            <div class="card_type">
-              <i class="fas fa-home"></i>
-            </div>
-            <div class="top_sec">
-             <%= @inspection.location.truncate(25, separator: /\s/, omission: '')%><br>
-              <%= @inspection.date.strftime('%e %b') %>
-              <span> <%= @inspection.time.to_time.strftime('%H:%M') %></span>
-            </div>
-            <div class="bot_sec">
-              <div class="user">
-                <%= link_to @inspection.user.username, user_path(@inspection.user_id)%>
-              </div>
-              <div class="desc speech-bubble">
-
-                 <%= @inspection.description.truncate(40, separator: /\s/, omission: '...') %>
-              </div>
-            </div>
-            <div class="price">
-              <h6><strong>$<%= @inspection.payment_amount %></strong></h6>
-            </div>
-            <div class="view">
-
+               <%= @inspection.description.truncate(40, separator: /\s/, omission: '...') %>
             </div>
           </div>
-
-          <div class="show_controls">
-            <%= link_to "Edit", edit_inspection_path(@inspection), :class => "btn btn-success" %>
-            <%= link_to "Delete", inspection_path(@inspection), method: :delete, :class => "btn btn-danger" %>
+          <div class="price">
+            <h6><strong>$<%= @inspection.payment_amount %></strong></h6>
           </div>
+        </div>
+        <div class="show_controls">
+          <%= link_to "Edit", edit_inspection_path(@inspection), :class => "btn btn-success" %>
+          <%= link_to "Delete", inspection_path(@inspection), method: :delete, :class => "btn btn-danger" %>
+        </div>
 
-          <div class="container">
-            <ul class="nav nav-tabs align" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Offers</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Comments</a>
-              </li>
-            </ul>
 
-            <span class=" tab-content" id="myTabContent">
-              <span class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <% @bookings.each do |booking| %>
+        <div>
+          <ul class="nav nav-tabs align" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Offers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Comments</a>
+            </li>
+          </ul>
 
-                  <h5> username: <%= link_to booking.user.email, booking_path(booking) %> </h5>
+          <span class=" tab-content" id="myTabContent">
+            <span class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+              <% if current_user and !@pending_booking and !@active_bookings[0]%>
+                  <div class="float-down">
+                    <%= simple_form_for [@inspection, @booking] do |f| %>
+                    <%= f.input :note, label: false, wrapper: :inline_form, html: { class: 'form-inline', item_label_class: 'form_note' } %>
+                      <%= f.submit 'Submit' %>
+                    <% end %>
+                  </div>
+                <% end %>
+
+              <% @bookings.each do |booking| %>
+
+                  <h5><%= link_to booking.user.username, booking_path(booking) %> </h5>
 
                   <%= booking.note %>
 
@@ -65,16 +71,21 @@
                                 data: { confirm: "Are you sure?" } %>
 
                 <% end %>
-                <% if current_user and !@pending_booking and !@active_bookings[0]%>
+
+
+
+            </span>
+
+            <span class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
                 <div class="float-down">
-                  <%= simple_form_for [@inspection, @booking] do |f| %>
-                  <%= f.input :note, label: false, wrapper: :inline_form, html: { class: 'form-inline', item_label_class: 'form_note' } %>
-                    <%= f.submit  %>
+                  <%= simple_form_for [@inspection, @comment] do |f| %>
+                    <%= f.input :private, :as => :hidden, :input_html => { :value => false } %>
+                   <%= f.input :description, label: false, wrapper: :inline_form, html: { class: 'form-inline' } %>
+                   <%= f.submit 'Send' %>
                   <% end %>
-                <% end %>
                 </div>
-              </span>
-              <span class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
                 <% @comments.each do |comment| %>
                   <h5> <%= comment.user.username %> </h5>
                   <h6> <%= comment.description %> </h6>
@@ -84,22 +95,14 @@
                   <div> <%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "Are you sure?" }%> </div>
                   <% end %>
                 <% end %>
-                <div class="float-down">
-                  <%= simple_form_for [@inspection, @comment] do |f| %>
-                    <%= f.input :private, :as => :hidden, :input_html => { :value => false } %>
-                   <%= f.input :description, label: false, wrapper: :inline_form, html: { class: 'form-inline' } %>
-                   <%= f.submit %>
-                  <% end %>
-                </div>
-              </span>
+
+
             </span>
 
-
-          </div>
+          </span>
 
         </div>
-
-
       </div>
     </div>
+  </div>
 </div>
